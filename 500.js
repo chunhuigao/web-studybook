@@ -4,6 +4,8 @@
 第二行由字符 "asdfghjkl" 组成。
 第三行由字符 "zxcvbnm" 组成。`
 
+//感觉没那么简单，但是又没有提起思路
+
 var findWords = function (words) {
   let l = words.length
   let arr = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']

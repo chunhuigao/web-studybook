@@ -2,7 +2,7 @@
  * @ Author: Your name
  * @ Create Time: 2021-11-02 21:16:24
  * @ Modified by: Your name
- * @ Modified time: 2021-11-02 21:21:31
+ * @ Modified time: 2021-11-02 21:24:47
  * @ Description:数组转链表
  */
 
@@ -20,7 +20,20 @@ function arrayToNodeList(list) {
   }
   return header.next
 }
+
+function nodeListToArray(node) {
+  const list = []
+  let header = node
+  while (header) {
+    list.push(header.val)
+    header = header.next
+  }
+  return list
+}
 const array = [1, 3, 5]
 const ary2 = [2, 4, 6]
-const ss = arrayToNodeList(array)
-console.log(ss)
+const list1 = arrayToNodeList(array)
+const list2 = arrayToNodeList(ary2)
+console.log(list1, list2)
+const aa = nodeListToArray(list1)
+console.log(aa)

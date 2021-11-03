@@ -1,5 +1,5 @@
 const s = readline()
-//console.log('i',s)
+
 const len = s.length
 let sign = true
 const list = []

@@ -1,3 +1,12 @@
+/*
+ * @Author: mikey.zhaopeng
+ * @Date: 2021-11-07 17:45:00
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2021-11-07 17:46:00
+ * 有三个函数，f1、f2、f3
+ * 在执行f3的时候将f2和f1执行;并且不影响f3的执行结果
+ */
+
 function f1() {
   return function (next) {
     return function (action) {
@@ -14,7 +23,7 @@ function f2() {
   return function (next) {
     return function (action) {
       if (typeof action === 'function') {
-        action()
+        return action()
       }
       console.log(2)
       return next(action)

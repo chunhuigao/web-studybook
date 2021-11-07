@@ -6,10 +6,11 @@ import React, { Component } from 'react'
 export default class App extends Component {
   componentDidMount() {
     console.log(Store)
-    Store.subscribe(() => {
+    this.subscribe = Store.subscribe(() => {
       this.forceUpdate()
     })
   }
+  componentWillUnmount() {}
   render() {
     return (
       <div className="App">
@@ -23,6 +24,13 @@ export default class App extends Component {
           }}
         >
           点击我，触发action
+        </button>
+        <button
+          onClick={() => {
+            this.subscribe()
+          }}
+        >
+          点击我，取消订阅
         </button>
       </div>
     )

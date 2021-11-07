@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { createStore } from 'redux'
+import './App.css'
+import Store from './redux/store'
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+export default class App extends Component {
+  componentDidMount() {
+    console.log(Store)
+    Store.subscribe(() => {
+      this.forceUpdate()
+    })
+  }
+  render() {
+    return (
+      <div className="App">
+        <h2>redux</h2>
+        <h4>数据{Store.getState()}</h4>
+        <button
+          onClick={() => {
+            Store.dispatch({
+              type: 'add',
+            })
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          点击我，触发action
+        </button>
+      </div>
+    )
+  }
 }
-
-export default App;

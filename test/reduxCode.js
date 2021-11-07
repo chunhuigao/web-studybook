@@ -18,6 +18,20 @@ function thunk({ dispatch, getState }) {
   }
 }
 
+function logger({ dispatch, getState }) {
+  return function (next) {
+    return function (action) {
+      const initState = getState()
+      console.log('initState', getState())
+      console.log('action', action.type)
+      const returnedValue = next(action)
+      console.log('nextState', getState())
+
+      return returnedValue
+    }
+  }
+}
+
 function applyMiddleware(...middlewares) {
   return function (createStore) {
     return function (reducer) {
@@ -29,6 +43,7 @@ function applyMiddleware(...middlewares) {
       }
       const chian = middlewares.map((middleware) => middleware(middleAPI))
       dispatch = compose(...chian)(store.dispatch)
+      console.log('dispatch', dispatch)
       return {
         ...store,
         dispatch,
@@ -77,7 +92,7 @@ function createStore(reducer, enhancer) {
   }
 }
 
-const store = createStore(reducer, applyMiddleware(thunk))
+const store = createStore(reducer, applyMiddleware(thunk, logger))
 store.subscribe(() => {
   result = store.getState()
   console.log('result2', result)

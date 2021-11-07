@@ -1,4 +1,6 @@
-import { createStore } from 'redux'
+//import { createStore } from 'redux'
+
+import { createStore } from '../yRedux/index'
 
 function reducerName(state = 1, action) {
   switch (action.type) {

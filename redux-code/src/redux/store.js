@@ -13,6 +13,7 @@ function reducerName(state = 1, action) {
   }
 }
 
+// createStore是一个函数，返回了一个对象
 const store = createStore(reducerName)
 
 export default store

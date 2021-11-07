@@ -18,8 +18,10 @@ export default class App extends Component {
         <h4>数据{Store.getState()}</h4>
         <button
           onClick={() => {
-            Store.dispatch({
-              type: 'add',
+            Store.dispatch((dispatch) => {
+              dispatch({
+                type: 'add',
+              })
             })
           }}
         >

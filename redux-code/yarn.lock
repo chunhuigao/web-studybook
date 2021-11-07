@@ -9196,6 +9196,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+redux-thunk@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.npmmirror.com/redux-thunk/download/redux-thunk-2.4.0.tgz#ac89e1d6b9bdb9ee49ce69a69071be41bbd82d67"
+  integrity sha1-rInh1rm9ue5JzmmmkHG+QbvYLWc=
+
 redux@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npmmirror.com/redux/download/redux-4.1.2.tgz#140f35426d99bb4729af760afcf79eaaac407104"

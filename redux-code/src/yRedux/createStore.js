@@ -2,15 +2,23 @@
  * @Author: mikey.zhaopeng
  * @Date: 2021-11-07 15:55:36
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-11-07 16:05:13
+ * @Last Modified time: 2021-11-07 16:16:23
  * 通过 createStore简单使用可以知道
  * createStore是一个函数，执行createStore函数的时候返回了一个对象；
  * 对象中包含了三个方法getState、dispatch、subscribe;
  * 入参是一个reducer函数
+ *
+ *
+ * applyMiddleware是createStore第二个参数，所以在createStore需要增加第二个参数;
+ * applyMiddleware是一个函数，还返回了一个函数
+ *
  */
 
-export default function createStore(reducer) {
+export default function createStore(reducer, enhancer) {
   //getState函数，返回了当前的state;所以需要定义一个变量，保存当前state;
+  if (enhancer) {
+    return enhancer(createStore)(reducer)
+  }
   let currentState = undefined
   let dispatchListener = []
   function getState() {

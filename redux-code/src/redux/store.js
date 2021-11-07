@@ -1,7 +1,8 @@
 //import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-import { createStore, applyMiddleware } from '../yRedux/index'
 
+// import thunk from 'redux-thunk'
+import { createStore, applyMiddleware } from '../yRedux/index'
+import thunk from '../yRedux/thunk'
 function reducerName(state = 1, action) {
   switch (action.type) {
     case 'add':

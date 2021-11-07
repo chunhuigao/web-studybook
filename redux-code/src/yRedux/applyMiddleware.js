@@ -2,7 +2,7 @@
  * @Author: mikey.zhaopeng
  * @Date: 2021-11-07 16:18:22
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-11-07 16:32:01
+ * @Last Modified time: 2021-11-07 21:03:58
  * 在store中使用了applyMiddleware，参数是thunk、logger
  *
  *
@@ -30,7 +30,7 @@ export default function applyMiddleware(...middlewares) {
 
       // 将中间件执行的结果返回给dispatch；在调用dispatch的时候使用的就是增强后的dispatch了
       dispatch = compose(...chian)(store.dispatch)
-
+      console.log('dispatch', dispatch)
       return {
         ...store,
         dispatch,

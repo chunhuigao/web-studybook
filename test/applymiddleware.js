@@ -1,20 +1,20 @@
 /*
+
  * @Author: mikey.zhaopeng
- * @Date: 2021-11-07 17:45:00
+ * @Date: 2021-11-07 21:29:59
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-11-07 22:00:57
- * 有三个函数，f1、f2、f3
- * 在执行f3的时候将f2和f1执行;并且不影响f3的执行结果
+ * @Last Modified time: 2021-11-07 21:48:10
+ *
+ * 现在有函数f1,f2,f3, 实现一个函数，f3执行是，f1,f2也执行
  */
 
 function f1() {
   return function (next) {
     return function (action) {
-      console.log(1)
       if (typeof action === 'function') {
         return action()
       }
-
+      console.log(1, next, action)
       return next(action)
     }
   }
@@ -39,15 +39,13 @@ function f3(enhancer) {
     console.log('action', action)
   }
 }
-
+//中间件函数
 function applyMiddleware(...middlewares) {
   return function (f3) {
-    const API = {
-      f3: (action, ...args) => f3(action, args),
-    }
-    const chian = middlewares.map((middlewares) => middlewares(API))
-    const dispatch = compose(...chian)(f3)
-    return dispatch()
+    const chian = middlewares.map((middleware) => middleware({}))
+    const f = compose(...chian)(f3)
+    console.log('action', f)
+    return f()
   }
 }
 
@@ -61,7 +59,6 @@ function compose(...funcs) {
   )
 }
 const aa = f3(applyMiddleware(f1, f2))
-
-aa(() => {
-  console.log(11)
+aa(function () {
+  console.log({ type: 'add' })
 })

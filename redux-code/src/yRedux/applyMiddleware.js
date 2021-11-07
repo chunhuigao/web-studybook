@@ -2,7 +2,7 @@
  * @Author: mikey.zhaopeng
  * @Date: 2021-11-07 16:18:22
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-11-07 16:28:07
+ * @Last Modified time: 2021-11-07 16:32:01
  * 在store中使用了applyMiddleware，参数是thunk、logger
  *
  *

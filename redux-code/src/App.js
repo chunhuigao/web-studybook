@@ -1,4 +1,4 @@
-import { createStore } from 'redux'
+import { createStore,combineReducers } from 'redux'
 import './App.css'
 import Store from './redux/store'
 import React, { Component } from 'react'

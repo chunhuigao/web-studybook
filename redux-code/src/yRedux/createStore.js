@@ -2,7 +2,7 @@
  * @Author: mikey.zhaopeng
  * @Date: 2021-11-07 15:55:36
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-11-07 16:16:23
+ * @Last Modified time: 2021-11-09 22:44:49
  * 通过 createStore简单使用可以知道
  * createStore是一个函数，执行createStore函数的时候返回了一个对象；
  * 对象中包含了三个方法getState、dispatch、subscribe;

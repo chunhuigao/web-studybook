@@ -1,7 +1,7 @@
 //import { createStore, applyMiddleware } from 'redux'
 
 // import thunk from 'redux-thunk'
-import { createStore, applyMiddleware } from '../yRedux/index'
+import { createStore, applyMiddleware, combineReducers } from '../yRedux/index'
 import thunk from '../yRedux/thunk'
 function reducerName(state = 1, action) {
   switch (action.type) {
@@ -14,8 +14,11 @@ function reducerName(state = 1, action) {
   }
 }
 
+const reducers = combineReducers({
+  reducerName,
+})
 // createStore是一个函数，返回了一个对象,
 // 使用了applyMiddleware,applyMiddleware一个函数
-const store = createStore(reducerName, applyMiddleware(thunk))
+const store = createStore(reducers, applyMiddleware(thunk))
 
 export default store

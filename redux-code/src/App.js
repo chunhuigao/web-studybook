@@ -2,6 +2,7 @@ import { createStore } from 'redux'
 import './App.css'
 import Store from './redux/store'
 import React, { Component } from 'react'
+import Home from './pages/Home'
 
 export default class App extends Component {
   componentDidMount() {
@@ -34,6 +35,7 @@ export default class App extends Component {
         >
           点击我，取消订阅
         </button>
+        <Home />
       </div>
     )
   }

@@ -1,10 +1,8 @@
 # 学习计划
 
-## 2021.11.07
+## 2021.11.09
 
-完成 redux-createStore 函数功能  
-完成 redux-applymiddleware 函数功能  
-理解 redux-applyMiddleware,放在 test/applyMiddleware.js
+完成 B 站视频[环形链表](https://www.bilibili.com/video/BV1nv411M7Rm/)
 
 ## 2021.11.08
 
@@ -16,3 +14,9 @@
 完成 leetcode [返回倒数第 k 个节点](https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci/)  
 完成 leetcode [环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)  
 完成 leetcode [只出现一次的数字](https://leetcode-cn.com/problems/WGki4K/)
+
+## 2021.11.07
+
+完成 redux-createStore 函数功能  
+完成 redux-applymiddleware 函数功能  
+理解 redux-applyMiddleware,放在 test/applyMiddleware.js

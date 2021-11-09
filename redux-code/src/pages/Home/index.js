@@ -8,8 +8,11 @@ const reducer = (state = 1, action) => {
       return state - 1
   }
 }
+const init = (args) => {
+  return Number(args)
+}
 export default function Index() {
-  const [state, dispatch] = useReducer(reducer, 1)
+  const [state, dispatch] = useReducer(reducer, '10', init)
   console.log('state', state)
   return (
     <div>

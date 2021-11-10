@@ -1,5 +1,6 @@
 // 返回reducer
 
+// 输入的是对象，返回的是函数
 export default function combineReducers(reducers) {
   return function combintion(state = {}, action) {
     let nextState = {}

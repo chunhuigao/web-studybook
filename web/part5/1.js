@@ -15,3 +15,20 @@ var judgeSquareSum = function (c) {
   }
   return false
 }
+
+// 二分法
+
+var judgeSquareSum = function (c) {
+  let left = 0
+  let right = Math.ceil(Math.sqrt(c))
+  while (left <= right) {
+    const t = Math.pow(left, 2) + Math.pow(right, 2)
+    if (t === c) return true
+    if (t < c) {
+      left = left + 1
+    } else {
+      right = right - 1
+    }
+  }
+  return false
+}

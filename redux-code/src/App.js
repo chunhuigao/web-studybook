@@ -36,7 +36,7 @@ export default class App extends Component {
           点击我，取消订阅
         </button>
         <Home />
-        <About />
+        <About title="南京" />
       </div>
     )
   }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 //import { bindActionCreators } from 'redux'
 import { bindActionCreators } from '../../yRedux'
+import { connect } from '../../reactRedux/index'
 
 class About extends Component {
   componentDidMount() {
@@ -10,7 +11,7 @@ class About extends Component {
   render() {
     const { add, mins } = this.props
     return (
-      <div>
+      <div >
         <button onClick={add}>点击我，action</button>
         <button onClick={mins}>减少数据</button>
       </div>

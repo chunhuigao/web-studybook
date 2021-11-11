@@ -18,9 +18,11 @@ export default function connect(mapStateToProps, mapDispatchToProps) {
 }
 
 function useForceUpdate() {
-  const [state, setState] = useState(0)
+  // const [state, setState] = useState(0)
+  const [, setState] = useReducer((x) => x + 1, 0)
   const updata = useCallback(() => {
-    setState((prve) => prve + 1)
+    //setState((prve) => prve + 1)
+    setState()
   }, [])
   return updata
 }

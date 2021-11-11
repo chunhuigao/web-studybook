@@ -8,7 +8,7 @@ import About from './pages/About'
 export default class App extends Component {
   componentDidMount() {
     this.subscribe = Store.subscribe(() => {
-      this.forceUpdate()
+      // this.forceUpdate()
     })
   }
   componentWillUnmount() {}

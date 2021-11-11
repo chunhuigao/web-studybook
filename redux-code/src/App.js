@@ -3,6 +3,7 @@ import './App.css'
 import Store from './redux/store'
 import React, { Component } from 'react'
 import Home from './pages/Home'
+import About from './pages/About'
 
 export default class App extends Component {
   componentDidMount() {
@@ -35,6 +36,7 @@ export default class App extends Component {
           点击我，取消订阅
         </button>
         <Home />
+        <About />
       </div>
     )
   }

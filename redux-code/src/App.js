@@ -1,4 +1,4 @@
-import { createStore,combineReducers } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import './App.css'
 import Store from './redux/store'
 import React, { Component } from 'react'
@@ -6,7 +6,6 @@ import Home from './pages/Home'
 
 export default class App extends Component {
   componentDidMount() {
-    console.log(Store)
     this.subscribe = Store.subscribe(() => {
       this.forceUpdate()
     })
@@ -16,7 +15,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <h2>redux</h2>
-        <h4>数据{Store.getState()}</h4>
+        <h4>数据{Store.getState().reducerName}</h4>
         <button
           onClick={() => {
             Store.dispatch((dispatch) => {

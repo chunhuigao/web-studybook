@@ -5,6 +5,7 @@ export default function combineReducers(reducers) {
   return function combintion(state = {}, action) {
     let nextState = {}
     let hasChange = false
+
     for (let key in reducers) {
       const reducer = reducers[key]
       nextState[key] = reducer(state[key], action)

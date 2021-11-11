@@ -17,6 +17,7 @@ function reducerName(state = 1, action) {
 const reducers = combineReducers({
   reducerName,
 })
+
 // createStore是一个函数，返回了一个对象,
 // 使用了applyMiddleware,applyMiddleware一个函数
 const store = createStore(reducers, applyMiddleware(thunk))

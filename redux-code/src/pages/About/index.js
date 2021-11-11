@@ -27,15 +27,19 @@ const mapStateToProps = (state, ownProps) => {
     ...state,
   }
 }
-const mapDispatchToProps = (dispatch) => {
-  let creator = {
-    add: () => ({ type: 'add' }),
-    mins: () => ({ type: 'mins' }),
-  }
-  creator = bindActionCreators(creator, dispatch)
-  return {
-    dispatch,
-    ...creator,
-  }
+// const mapDispatchToProps = (dispatch) => {
+//   let creator = {
+//     add: () => ({ type: 'add' }),
+//     mins: () => ({ type: 'mins' }),
+//   }
+//   creator = bindActionCreators(creator, dispatch)
+//   return {
+//     dispatch,
+//     ...creator,
+//   }
+// }
+const mapDispatchToProps = {
+  add: () => ({ type: 'add' }),
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(About)

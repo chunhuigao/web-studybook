@@ -4,8 +4,9 @@ import Store from './redux/store'
 import React, { Component } from 'react'
 import Home from './pages/Home'
 import About from './pages/About'
+import ReactReduxPage from './pages/ReactReduxPage'
 
-export default class App extends Component {
+class App extends Component {
   componentDidMount() {
     this.subscribe = Store.subscribe(() => {
       // this.forceUpdate()
@@ -37,7 +38,9 @@ export default class App extends Component {
         </button>
         <Home />
         <About title="南京" />
+        <ReactReduxPage title="南京" />
       </div>
     )
   }
 }
+export default App

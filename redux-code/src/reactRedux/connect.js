@@ -6,6 +6,7 @@ export default function connect(mapStateToProps, mapDispatchToProps) {
     return function (props) {
       // 子孙组件接受数据
       const store = useContext(Context)
+      console.log('store2132', store)
       const stateProps = mapStateToProps(store.getState())
       let dispatchProps = { dispatch: store.dispatch }
       if (typeof mapDispatchToProps === 'function') {
@@ -23,7 +24,7 @@ export default function connect(mapStateToProps, mapDispatchToProps) {
   }
 }
 
-function useForceUpdate() {
+export function useForceUpdate() {
   // const [state, setState] = useState(0)
   const [, setState] = useReducer((x) => x + 1, 0)
   const updata = useCallback(() => {

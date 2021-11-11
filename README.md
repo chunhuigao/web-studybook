@@ -3,8 +3,8 @@
 ## 2021.11.11
 
 完成第六期算法文章输出：[掘金](https://juejin.cn/post/7029308634052067365)  
-学习 react-redux 中 Provider、connect 源码
-熟悉 useReducer、forceUpdata 方法、作用
+学习 react-redux 中 Provider、connect 源码  
+熟悉 useReducer、forceUpdata 方法、作用  
 了解一个自定义 hook 函数写法
 
 ## 2021.11.10

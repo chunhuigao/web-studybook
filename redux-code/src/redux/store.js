@@ -3,12 +3,12 @@
 // import thunk from 'redux-thunk'
 import { createStore, applyMiddleware, combineReducers } from '../yRedux/index'
 import thunk from '../yRedux/thunk'
-function reducerName(state = 1, action) {
-  switch (action.type) {
+function reducerName(state = 1, { type, num }) {
+  switch (type) {
     case 'add':
-      return state + 1
+      return state + (num || 1)
     case 'mins':
-      return state - 1
+      return state - (num || 1)
     default:
       return state
   }

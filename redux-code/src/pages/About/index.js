@@ -9,18 +9,22 @@ class About extends Component {
     console.log(this.props)
   }
   render() {
-    const { add, mins } = this.props
+    const { add, mins, dispatch, reducerName } = this.props
     return (
-      <div >
+      <div>
+        <h3>这里显示数据{reducerName}</h3>
         <button onClick={add}>点击我，action</button>
         <button onClick={mins}>减少数据</button>
+        <button onClick={() => dispatch({ type: 'add', num: 10 })}>
+          增加数据
+        </button>
       </div>
     )
   }
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop,
+    ...state,
   }
 }
 const mapDispatchToProps = (dispatch) => {

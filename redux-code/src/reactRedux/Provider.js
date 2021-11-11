@@ -2,7 +2,7 @@
  * @Author: mikey.zhaopeng
  * @Date: 2021-11-11 23:04:22
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-11-11 23:16:02
+ * @Last Modified time: 2021-11-11 23:33:34
  * 跨层级传输数据
  *
  *
@@ -11,7 +11,7 @@
 import React from 'react'
 
 //创建context对象
-const Context = React.createContext()
+export const Context = React.createContext()
 
 //通过Provider传递store
 

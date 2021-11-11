@@ -11,10 +11,10 @@
 
 完成第六期算法：
 [两数平方和](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/1.js)  
-[二路归并排序](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/2.js)
-[二分法查找](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/3.js)
-[两数之和](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/4.js)
-[最长递增子序列](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/5.js)
+[二路归并排序](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/2.js)  
+[二分法查找](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/3.js)  
+[两数之和](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/4.js)  
+[最长递增子序列](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/5.js)  
 
 ## 2021.11.09
 

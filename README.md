@@ -1,5 +1,9 @@
 # 学习计划
 
+## 2021.11.11
+
+完成第六期算法文章输出：[掘金](https://juejin.cn/post/7029308634052067365)  
+
 ## 2021.11.10
 
 完成第六期算法：
@@ -8,7 +12,6 @@
 [二分法查找](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/3.js)
 [两数之和](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/4.js)
 [最长递增子序列](https://github.com/chunhuigao/web-studybook/blob/master/web/part5/5.js)
-
 
 ## 2021.11.09
 

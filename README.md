@@ -1,5 +1,15 @@
 # 学习计划
 
+## 2021.11.13
+
+第 7 期算法[两节点的最长路径](https://github.com/chunhuigao/web-studybook/blob/master/web/part7/3.js)
+
+第 7 期算法[两个字符串包含的字符是否完全相同](https://github.com/chunhuigao/web-studybook/blob/master/web/part7/4.js)
+
+第 7 期算法[计算一组字符集合可以组成的回文字符串的最大长度](https://github.com/chunhuigao/web-studybook/blob/master/web/part7/5.js)
+
+自定义封装 vue swiper[vue 版本 swiper](https://gitee.com/beidouluofanchen/yin-swiper/tree/yin-swiper10/)
+
 ## 2021.11.12
 
 第 7 期算法[快乐数](https://juejin.cn/post/7029680724668055566)

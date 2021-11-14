@@ -1,5 +1,9 @@
 # 学习计划
 
+## 2021.11.14
+
+学习维护开源项目，完成第一次 Pull requests
+
 ## 2021.11.13
 
 第 7 期算法[两节点的最长路径](https://github.com/chunhuigao/web-studybook/blob/master/web/part7/3.js)

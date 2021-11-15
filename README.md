@@ -1,5 +1,13 @@
 # 学习计划
 
+## 2021.11.15
+
+最长公共子序列：[掘金](https://juejin.cn/post/7030812918593617928/)
+
+买卖股票：[掘金](https://juejin.cn/post/7030798601764749348)
+
+完成第 8 期算法题目：[github](https://github.com/chunhuigao/web-studybook/tree/master/web/part8)
+
 ## 2021.11.14
 
 学习维护开源项目，完成第一次 Pull requests

@@ -6,7 +6,7 @@
 
 买卖股票：[掘金](https://juejin.cn/post/7030798601764749348)
 
-完成第 8 期算法题目：[github](https://github.com/chunhuigao/web-studybook/tree/master/web/part8)
+完成第 8 期算法题：[github](https://github.com/chunhuigao/web-studybook/tree/master/web/part8)
 
 了解一点点有限状态机
 

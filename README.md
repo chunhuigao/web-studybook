@@ -1,5 +1,10 @@
 # 学习计划
 
+## 2021.11.16
+
+最长公共子序列：[B 站视频](https://www.bilibili.com/video/BV1hP4y157HS/)
+爬楼梯：[掘金](https://juejin.cn/post/7031184178657902605/)
+
 ## 2021.11.15
 
 最长公共子序列：[掘金](https://juejin.cn/post/7030812918593617928/)

@@ -1,5 +1,11 @@
 # 学习计划
 
+## 2021.11.18
+
+合链表：[掘金](https://juejin.cn/post/7031915296873332766)
+
+第 9 期算法题解：[GitHub](https://github.com/chunhuigao/web-studybook/blob/master/web/part9)
+
 ## 2021.11.17
 
 复制带随机指针的链表：[掘金](https://juejin.cn/post/7031558149693767693/)

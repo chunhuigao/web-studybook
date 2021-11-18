@@ -39,3 +39,29 @@ var mergeKLists = function (lists) {
     }
   }
 }
+
+//迭代法
+
+var mergeKLists = function (lists) {
+  const len = lists.length
+  if (len === 0) return null
+  if (len === 1) return lists[0]
+  let start = lists[0]
+  for (let i = 1; i < len; i++) {
+    const curr = lists[i]
+    start = mergeTwoListNode(start, curr)
+  }
+  return start
+
+  function mergeTwoListNode(l1, l2) {
+    if (l1 === null) return l2
+    if (l2 == null) return l1
+    if (l1.val < l2.val) {
+      l1.next = mergeTwoListNode(l1.next, l2)
+      return l1
+    } else {
+      l2.next = mergeTwoListNode(l1, l2.next)
+      return l2
+    }
+  }
+}

@@ -6,6 +6,8 @@
 
 第 9 期算法题解：[GitHub](https://github.com/chunhuigao/web-studybook/blob/master/web/part9)
 
+观看 react-router 视频
+
 ## 2021.11.17
 
 复制带随机指针的链表：[掘金](https://juejin.cn/post/7031558149693767693/)

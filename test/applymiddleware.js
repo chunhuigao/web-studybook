@@ -3,7 +3,7 @@
  * @Author: mikey.zhaopeng
  * @Date: 2021-11-07 21:29:59
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-11-07 21:48:10
+ * @Last Modified time: 2021-11-19 22:22:48
  *
  * 现在有函数f1,f2,f3, 实现一个函数，f3执行是，f1,f2也执行
  */
@@ -14,7 +14,7 @@ function f1() {
       if (typeof action === 'function') {
         return action()
       }
-      console.log(1, next, action)
+      console.log('我是f1')
       return next(action)
     }
   }
@@ -25,14 +25,14 @@ function f2() {
       if (typeof action === 'function') {
         return action()
       }
-      console.log(2)
+      console.log('我是f2')
       return next(action)
     }
   }
 }
 
 function f3(enhancer) {
-  if (enhancer) {
+  if (typeof enhancer === 'function') {
     return enhancer(f3)
   }
   return function (action) {
@@ -44,8 +44,7 @@ function applyMiddleware(...middlewares) {
   return function (f3) {
     const chian = middlewares.map((middleware) => middleware({}))
     const f = compose(...chian)(f3)
-    console.log('action', f)
-    return f()
+    return f
   }
 }
 
@@ -59,6 +58,4 @@ function compose(...funcs) {
   )
 }
 const aa = f3(applyMiddleware(f1, f2))
-aa(function () {
-  console.log({ type: 'add' })
-})
+aa('我是f3')

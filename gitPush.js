@@ -11,9 +11,10 @@ if (!shell.which('git')) {
 // shell.exec('git commit -m "使用nodejs自动执行git"')
 function start() {
   var code = shell.exec('git push origin master').code
-  if (code) {
-    console.log('code', code)
+  if (code === 0) {
     shell.exit(1)
+  } else {
+    setTimeout(start, 1000)
   }
 }
 start()

@@ -4,6 +4,8 @@
 
 了解 JavaScript 中间件：[掘金](https://juejin.cn/post/7032293232591503390)
 
+利用 shelljs 编写一个自动执行 git push 的脚本，自动执行解决了 timed out 问题
+
 ## 2021.11.18
 
 合链表：[掘金](https://juejin.cn/post/7031915296873332766)

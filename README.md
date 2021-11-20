@@ -1,5 +1,11 @@
 # 学习计划
 
+## 2021.11.20
+
+leetcode 每日一题 最长和谐子序列：[掘金](https://juejin.cn/post/7032633978808959007)
+
+leetcode 每日一题 最大单词长度乘积：[掘金](https://juejin.cn/post/7032647516352937992)
+
 ## 2021.11.19
 
 了解 JavaScript 中间件：[掘金](https://juejin.cn/post/7032293232591503390)

@@ -18,29 +18,19 @@ watcher.add(['./github-db'])
 // 监听文件夹
 watcher
   .on('add', function (filePath) {
-    // 获取后缀
-    const extname = path.extname(filePath)
-
-    //文件全名
-    const basename = path.basename(filePath)
-
-    if (ext.includes(extname)) {
-      // json
-    }
+    //添加文件
   })
   .on('change', function (filePath) {
+    // 修改文件
     // 获取后缀
     const extName = path.extname(filePath)
 
     //文件全名
     const baseName = path.basename(filePath)
 
+    //获取文件名，不含后缀
     const fileName = baseName.substring(0, baseName.indexOf(extName))
-    console.log(
-      'checkDateFormat(fileName)',
-      fileName,
-      checkDateFormat(fileName)
-    )
+
     //校验是否符合日期字符串
     if (checkDateFormat(fileName)) {
       // 将文件提交到缓存
@@ -54,9 +44,7 @@ watcher
     }
   })
 
-// shell.exec('git add index.js')
-// shell.exec('git commit -m "使用nodejs自动执行git"')
-
+// 将文件添加到git缓存
 function gitAdd(baseName) {
   if (checkGit()) {
     const filePath = path.resolve(__dirname, baseName)
@@ -65,6 +53,8 @@ function gitAdd(baseName) {
   }
   return false
 }
+
+// 添加git 备注
 function gitCommit(commit) {
   if (checkGit()) {
     const code = shell.exec(`git commit -m ${commit}`).code
@@ -72,8 +62,11 @@ function gitCommit(commit) {
   }
   return false
 }
+
+// 提交
 function gitPush(master) {
   if (checkGit()) {
+    //如果提交失败，再次提交
     var code = shell.exec(master || 'git push origin master').code
     if (code === 0) {
       shell.exit(1)
@@ -83,6 +76,7 @@ function gitPush(master) {
   }
 }
 
+// 校验git是否可用
 function checkGit() {
   if (!shell.which('git')) {
     shell.echo('Sorry, this script requires git')
@@ -92,6 +86,7 @@ function checkGit() {
   return true
 }
 
+// 校验字符串是否符合日期格式
 function checkDateFormat(s) {
   let string = s
   if (

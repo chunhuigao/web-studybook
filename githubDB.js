@@ -94,7 +94,6 @@ function checkGit() {
 
 function checkDateFormat(s) {
   let string = s
-  console.log('55', s.length)
   if (
     /^\d{4}-\d{2}-\d{2}$/.test(s) ||
     /^\d{4}.\d{2}.\d{2}$/.test(s) ||
@@ -102,7 +101,6 @@ function checkDateFormat(s) {
   ) {
     string = s.replace(/[._-]/g, '')
   }
-  console.log('66', string)
   if (string.length === 8) {
     const year = string.substring(0, 4)
     const month = string.substring(4, 6)

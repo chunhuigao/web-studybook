@@ -8,7 +8,7 @@ leetcode 第 268 场周赛(二)：[掘金](https://juejin.cn/post/70330122610524
 
 leetcode 第 268 场周赛(三)：[掘金](https://juejin.cn/post/7033015623311605791)
 
-[通过 node 监听文件夹变动，校验文件名为日期格式，文件后缀为 json 文件自动提交到 github](https://github.com/chunhuigao/web-studybook/autoGitPush.js)
+[通过 node 监听文件夹变动，校验文件名为日期格式，文件后缀为 json 文件自动提交到 github](https://github.com/chunhuigao/web-studybook/blob/master/autoGitPush.js)
 
 ## 2021.11.20
 

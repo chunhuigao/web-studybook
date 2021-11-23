@@ -1,4 +1,4 @@
-//二叉树的后序遍历
+//
 var postorderTraversal = function (root) {
   let result = []
   helper(root)

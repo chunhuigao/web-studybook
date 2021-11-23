@@ -1,5 +1,15 @@
 # 学习计划
 
+### 2021.11.23
+
+二叉树的前序序列化 [掘金](https://juejin.cn/post/7033763588393140254)
+
+## 2021.11.22
+
+基本计算器 [掘金](https://juejin.cn/post/7033392987233222687)
+
+[json 文件方式，使用日期时间戳命名，可以自动提交到 github 上](https://github.com/chunhuigao/Daydayup/blob/auto_push_github/src/code-template/chunhuigao/autoPushGithub.js)
+
 ## 2021.11.21
 
 leetcode 第 268 场周赛(一)：[掘金](https://juejin.cn/post/7033007502765916174)
@@ -7,8 +17,6 @@ leetcode 第 268 场周赛(一)：[掘金](https://juejin.cn/post/70330075027659
 leetcode 第 268 场周赛(二)：[掘金](https://juejin.cn/post/7033012261052481549)
 
 leetcode 第 268 场周赛(三)：[掘金](https://juejin.cn/post/7033015623311605791)
-
-[通过 node 监听文件夹变动，校验文件名为日期格式，文件后缀为 json 文件自动提交到 github](https://github.com/chunhuigao/web-studybook/blob/master/autoGitPush.js)
 
 ## 2021.11.20
 

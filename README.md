@@ -1,5 +1,10 @@
 # 学习计划
 
+### 2021.11.24
+
+环形链表 II [掘金](https://juejin.cn/post/7034129379382968327)
+环形链表 II [B 栈](https://www.bilibili.com/video/bv1UQ4y1v7v3)
+
 ### 2021.11.23
 
 二叉树的前序序列化 [掘金](https://juejin.cn/post/7033763588393140254)

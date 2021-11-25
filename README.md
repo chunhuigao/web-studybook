@@ -1,6 +1,12 @@
 # 学习计划
 
-### 2021.11.24
+## 2021.11.25
+
+时钟代码： [掘金](https://juejin.cn/post/7034494019371860004)
+
+时钟代码：[GitHub](https://github.com/chunhuigao/web-studybook/blob/master/demo/clock.html)
+
+## 2021.11.24
 
 环形链表 II [掘金](https://juejin.cn/post/7034129379382968327)
 
@@ -8,7 +14,7 @@
 
 第 11 期算法题解：[GitHub](https://github.com/chunhuigao/web-studybook/blob/master/web/part11)
 
-### 2021.11.23
+## 2021.11.23
 
 二叉树的前序序列化 [掘金](https://juejin.cn/post/7033763588393140254)
 

@@ -15,9 +15,7 @@ var Solution = function (m, n) {
 Solution.prototype.flip = function () {
   const x = Math.floor(Math.random() * this.total)
   this.total--
-  // 查找位置 x 对应的映射
   const idx = this.map.get(x) || x
-  // 将位置 x 对应的映射设置为位置 total 对应的映射
   this.map.set(x, this.map.get(this.total) || this.total)
   return [Math.floor(idx / this.n), idx % this.n]
 }

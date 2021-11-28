@@ -4,6 +4,10 @@
 
 Leetcode 第 269 场周赛 [掘金](https://juejin.cn/post/7035546280965177381)
 
+反转链表 1 [掘金](https://juejin.cn/post/7035643163855290375)
+
+反转链表 2 [掘金](https://juejin.cn/post/7035650479702933517)
+
 ## 2021.11.27
 
 随机翻转矩阵 [掘金](https://juejin.cn/post/7035269155255222308)

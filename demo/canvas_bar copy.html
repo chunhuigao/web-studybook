@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>条形图</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #canvas {
+      margin: 0 auto;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id='container'>
+    <canvas id='canvas' width="500" height="500"></canvas>
+  </div>
+</body>
+<!-- <script src="./json.js"></script> -->
+<script>
+  const color = ['#74cbed', '#d5d0fd', '#7767f9', '#fcecbd', '#61daab', '#329a99', '#d5eff9']
+  // console.log('json', testJson)
+  let canvas, ctx;
+  canvas = document.getElementById('canvas');
+  ctx = canvas.getContext('2d')
+
+
+  // 清空画布
+  function clear() {
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  }
+  //绘制x轴
+  function drawX() {
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(20, 480)
+    ctx.lineTo(480, 480)
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 2;
+    ctx.stroke()
+    ctx.restore()
+
+  }
+
+
+  //绘制y轴
+  function drawY() {
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(20, 480)
+    ctx.lineTo(20, 20)
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 2;
+    ctx.stroke()
+    ctx.restore()
+  }
+
+
+  let topIndex = 0;
+  // 渲染条形图和数字
+  function drawBar(v, i, max) {
+    let start = 480 - (i + 1) * 20;
+    console.log('i', i)
+    if (i === 9) {
+      topIndex = topIndex >= 30 ? 30 : topIndex + 1;
+      start -= topIndex
+    }
+    const allLen = 400;
+    let base = 100;
+    while (base < max) {
+      base += 100
+    }
+    const len = Math.floor(allLen * v / base)
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(20, start)
+    ctx.lineTo(len, start)
+    ctx.strokeStyle = color[i % 7];
+    ctx.lineWidth = 4;
+    ctx.stroke()
+    ctx.restore()
+    drawText(v, len + 6, start + 6)
+
+
+  }
+  // 绘制文字
+  function drawText(text, x, y) {
+    text = text || ' '
+    x = x || 0
+    y = y || 0
+    ctx.save();
+    ctx.beginPath();
+    ctx.font = '12px "微软雅黑"'
+    ctx.fillStyle = '#30f'
+    ctx.textBaseline = 'bottom'
+    ctx.fillText(text, x, y)
+    ctx.restore()
+  }
+
+  function buildDataList(num) {
+    return Array(10).fill(20).map(v => Math.floor(Math.random() * (num || 600)))
+  }
+
+
+  let nextList = buildDataList(100)
+  let list = buildDataList(100)
+  let status = null
+  let diffBase = null;
+  //绘制场景
+  function drawScene() {
+    const array = buildDataList();
+
+    list = list.map((v, i) => v + array[i])
+    diffBase = list.map(v => Math.floor(v / 60))
+
+    if (!status) {
+      animationDrawBar();
+      status = 'doing'
+    }
+    //console.log('list', list)
+
+  }
+
+
+
+  function animationDrawBar() {
+
+    // 一秒执行60次；
+    // 50次执行完
+    // 控制左右，
+    // 需要控制一下上下
+    const start = () => {
+      clear()
+      drawX()
+      drawY();
+      // console.log('nextList', nextList)
+      nextList = nextList.map((v, i) => v >= list[i] ? list[i] : v + 2)
+
+      const max = Math.max(...list)
+      nextList.forEach((v, i) => drawBar(v, i, max));
+
+      requestAnimationFrame(start);
+
+    };
+    window.requestAnimationFrame(start);
+  }
+
+
+  let limit = 0
+
+  drawScene()
+
+  //  window.requestAnimationFrame(start);
+
+
+
+
+</script>
+
+</html>

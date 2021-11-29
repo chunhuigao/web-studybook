@@ -31,3 +31,25 @@ var leastInterval = function (tasks, n) {
   }
   return result
 }
+
+/**
+ * @param {character[]} tasks
+ * @param {number} n
+ * @return {number}
+ */
+var leastInterval = function (tasks, n) {
+  const len = tasks.length
+  if (n === 0) return len
+  let list = Array(26).fill(0)
+
+  let max = 0
+  for (let i = 0; i < len; i++) {
+    const idx = tasks[i].charCodeAt() - 'A'.charCodeAt()
+    list[idx] += 1
+    max = Math.max(max, list[idx])
+  }
+  list = list.filter((v) => v > 0)
+  const maxNum = list.filter((v) => v === max)
+  const t1 = (max - 1) * (n + 1) + maxNum.length
+  return Math.max(len, t1)
+}

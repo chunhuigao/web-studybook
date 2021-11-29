@@ -1,5 +1,11 @@
 # 学习计划
 
+## 2021.11.29
+
+任务调度器 [掘金](https://juejin.cn/post/7036002332361883679)
+
+第 13 期算法题解：[GitHub](https://github.com/chunhuigao/web-studybook/blob/master/web/part13)
+
 ## 2021.11.28
 
 Leetcode 第 269 场周赛 [掘金](https://juejin.cn/post/7035546280965177381)

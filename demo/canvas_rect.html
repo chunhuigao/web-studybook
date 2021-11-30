@@ -18,11 +18,11 @@
   // 边框
   strokeRoundRect(context, 100, 200);
   fillRoundRect(context, 300, 200);
-  drawArrow(context, 0, 0, 100, 100)
+  drawLine(context, 0, 0, 100, 100)
 
 
   // 直线
-  function drawArrow(ctx, startX, startY, endX, endY) {
+  function drawLine(ctx, startX, startY, endX, endY) {
     ctx.save();
     ctx.beginPath();
     ctx.moveTo(startX, startY)
@@ -31,21 +31,26 @@
     ctx.lineWidth = 1;
     ctx.stroke();
     ctx.restore();
+    drawTriangle(ctx, startX, startY, endX, endY)
 
   }
 
   // 三角形
-  drawTriangle(context)
-  function drawTriangle(ctx) {
+  //drawTriangle(context)
+  function drawTriangle(ctx, startX, startY, endX, endY) {
     ctx.save();
     ctx.beginPath();
-    ctx.moveTo(10, 10);
-    ctx.lineTo(15, 30);
-    ctx.lineTo(5, 30);
+    const r = Math.atan((startY - endY) / (startX - endX))
+    const radians = r + ((startX > endX) ? -90 : 90) * Math.PI / 180
+    ctx.translate(100, 100);
+    ctx.rotate(radians)
+    ctx.moveTo(0, 0);
+    ctx.lineTo(5, 10);
+    ctx.lineTo(-5, 10);
     ctx.closePath();
-    ctx.strokeStyle = '#f00'
+    ctx.fillStyle = '#f00'
     ctx.lineWidth = 1;
-    ctx.stroke();
+    ctx.fill();
     ctx.restore();
 
   }

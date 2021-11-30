@@ -21,73 +21,89 @@
   drawArrow(context, 0, 0, 100, 100)
 
 
-  // 箭头
-  function drawArrow(cxt, startX, startY, endX, endY) {
-    cxt.save();
-    cxt.beginPath();
-    cxt.moveTo(startX, startY)
-    cxt.lineTo(endX, endX)
-    cxt.strokeStyle = '#4f0'
-    cxt.lineWidth = 1;
-    cxt.stroke();
-    cxt.restore();
+  // 直线
+  function drawArrow(ctx, startX, startY, endX, endY) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(startX, startY)
+    ctx.lineTo(endX, endX)
+    ctx.strokeStyle = '#4f0'
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.restore();
+
+  }
+
+  // 三角形
+  drawTriangle(context)
+  function drawTriangle(ctx) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(10, 10);
+    ctx.lineTo(15, 30);
+    ctx.lineTo(5, 30);
+    ctx.closePath();
+    ctx.strokeStyle = '#f00'
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.restore();
 
   }
 
   //填充圆角
-  function fillRoundRect(cxt, x, y) {
-    cxt.save();
-    cxt.translate(x, y);
-    drawRoundRectPath(cxt, 120, 50, 10);
-    cxt.fillStyle = '#f0f'
-    cxt.fill();
-    cxt.restore();
+  function fillRoundRect(ctx, x, y) {
+    ctx.save();
+    ctx.translate(x, y);
+    drawRoundRectPath(ctx, 120, 50, 10);
+    ctx.fillStyle = '#f0f'
+    ctx.fill();
+    ctx.restore();
   }
 
   // 边框
-  function strokeRoundRect(cxt, x, y) {
+  function strokeRoundRect(ctx, x, y) {
     // x,y偏移量
-    cxt.save();
-    cxt.beginPath();
-    cxt.translate(x, y);
+    ctx.save();
+    ctx.beginPath();
+    ctx.translate(x, y);
     //绘制圆角矩形的各个边  
-    drawRoundRectPath(cxt, 120, 50, 10);
-    cxt.lineWidth = 1;
-    cxt.strokeStyle = "#f00";
-    cxt.stroke();
-    cxt.restore();
+    drawRoundRectPath(ctx, 120, 50, 10);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "#f00";
+    ctx.stroke();
+    ctx.restore();
 
   }
 
 
 
-  function drawRoundRectPath(cxt, w, h, r) {
+  function drawRoundRectPath(ctx, w, h, r) {
     // w：宽，h表示高，r表示半径
-    cxt.beginPath();
+    ctx.beginPath();
 
     //左上圆角
-    cxt.arc(r, r, r, Math.PI, Math.PI * 3 / 2);
+    ctx.arc(r, r, r, Math.PI, Math.PI * 3 / 2);
 
     // 上边线
-    cxt.lineTo(w - r, 0);
+    ctx.lineTo(w - r, 0);
 
     // 又上圆角
-    cxt.arc(w - r, r, r, Math.PI * 3 / 2, Math.PI * 2);
+    ctx.arc(w - r, r, r, Math.PI * 3 / 2, Math.PI * 2);
 
     // 右侧边线
-    cxt.lineTo(w, h - r);
+    ctx.lineTo(w, h - r);
 
     // 右下圆角
-    cxt.arc(w - r, h - r, r, 0, Math.PI / 2);
+    ctx.arc(w - r, h - r, r, 0, Math.PI / 2);
 
     // 下边线
-    cxt.lineTo(r, h);
+    ctx.lineTo(r, h);
 
     // 下左圆角
-    cxt.arc(r, h - r, r, Math.PI / 2, Math.PI);
+    ctx.arc(r, h - r, r, Math.PI / 2, Math.PI);
 
     // 左侧边线
-    cxt.lineTo(0, r);
+    ctx.lineTo(0, r);
 
 
   }

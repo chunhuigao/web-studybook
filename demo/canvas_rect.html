@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id='container' width="500" height="500" style="border:1px solid #30f">您的浏览器不支持 HTML5 canvas 标签</canvas>
+</body>
+<script>
+  const canvas = document.getElementById('container');
+  const context = canvas.getContext("2d");
+
+  // 边框
+  strokeRoundRect(context, 100, 200);
+  fillRoundRect(context, 300, 200);
+  drawArrow(context, 0, 0, 100, 100)
+
+
+  // 箭头
+  function drawArrow(cxt, startX, startY, endX, endY) {
+    cxt.save();
+    cxt.beginPath();
+    cxt.moveTo(startX, startY)
+    cxt.lineTo(endX, endX)
+    cxt.strokeStyle = '#4ff'
+    cxt.lineWidth = 1;
+    
+    cxt.stroke();
+    cxt.restore();
+
+  }
+
+  //填充圆角
+  function fillRoundRect(cxt, x, y) {
+    cxt.save();
+    cxt.translate(x, y);
+    drawRoundRectPath(cxt, 120, 50, 10);
+    cxt.fillStyle = '#f0f'
+    cxt.fill();
+    cxt.restore();
+  }
+
+  // 边框
+  function strokeRoundRect(cxt, x, y) {
+    // x,y偏移量
+    cxt.save();
+    cxt.beginPath();
+    cxt.translate(x, y);
+    //绘制圆角矩形的各个边  
+    drawRoundRectPath(cxt, 120, 50, 10);
+    cxt.lineWidth = 1;
+    cxt.strokeStyle = "#f00";
+    cxt.stroke();
+    cxt.restore();
+
+  }
+
+
+
+  function drawRoundRectPath(cxt, w, h, r) {
+    // w：宽，h表示高，r表示半径
+    cxt.beginPath();
+
+    //左上圆角
+    cxt.arc(r, r, r, Math.PI, Math.PI * 3 / 2);
+
+    // 上边线
+    cxt.lineTo(w - r, 0);
+
+    // 又上圆角
+    cxt.arc(w - r, r, r, Math.PI * 3 / 2, Math.PI * 2);
+
+    // 右侧边线
+    cxt.lineTo(w, h - r);
+
+    // 右下圆角
+    cxt.arc(w - r, h - r, r, 0, Math.PI / 2);
+
+    // 下边线
+    cxt.lineTo(r, h);
+
+    // 下左圆角
+    cxt.arc(r, h - r, r, Math.PI / 2, Math.PI);
+
+    // 左侧边线
+    cxt.lineTo(0, r);
+
+
+  }
+
+</script>
+
+</html>

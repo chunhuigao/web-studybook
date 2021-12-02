@@ -6,20 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .titleText {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
   <div id='container'>
-    <canvas id='canvas' width="500" height="500"></canvas>
+    <div class="titleText">我是html字体</div>
+    <canvas id='canvas' width="500" height="500" style="width:500px;height:500px;display:block;margin:0 auto"></canvas>
   </div>
 </body>
 <script>
+  const dpr = window.devicePixelRatio
   const container = document.getElementById('container');
   let canvas, ctx, hour, minute, seconds;
 
   // 设置钟表圆心，宽高一半
-  var canvasRadius = 250;
+  var canvasRadius = 250 * dpr;
   canvas = document.getElementById('canvas');
+  const { width, height } = canvas.getBoundingClientRect()
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
   ctx = canvas.getContext('2d');
 
   // 清空画布
@@ -29,8 +40,8 @@
 
   // 渲染数字
   function drawNumber() {
-    ctx.font = '36px Arial';
-    ctx.fillStyle = '#667798';
+    ctx.font = `${36 * dpr}px Arial`;
+    ctx.fillStyle = '#000';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     for (var n = 1; n <= 12; n++) {

@@ -4,6 +4,8 @@
 
 重排链表[掘金](https://juejin.cn/post/7037469913933414408)
 
+移除无效的括号[掘金](https://juejin.cn/post/7037495167242207245)
+
 ## 2021.12.02
 
 canvas 在 Retina 屏下模糊问题[掘金](https://juejin.cn/post/7037107450977189919)

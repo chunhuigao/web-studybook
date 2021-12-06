@@ -1,8 +1,12 @@
 # 学习计划
 
-## 2021.12.06
+## 2021.12.07
 
-删除链表的中间节点 [掘金](https://juejin.cn/post/7038205386788175880)
+上周算法收获 [掘金](https://juejin.cn/post/7038555558181339143)
+
+截断句子 [掘金](https://juejin.cn/post/7038564344304500750)
+
+第 16 期算法题解：[GitHub](https://github.com/chunhuigao/web-studybook/blob/master/web/part16)
 
 ## 2021.12.05
 

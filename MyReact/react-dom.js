@@ -2,6 +2,7 @@
 
 // vnode 虚拟节点
 // node 真是节点
+
 function render(vnode, container) {
   const node = createNode(vnode)
 
@@ -10,7 +11,22 @@ function render(vnode, container) {
 function isStringOrNumber(sth) {
   return typeof sth === 'string' || typeof sth === 'number'
 }
-//将虚拟节点转换为真是节点
+/**
+ *
+ * @param {*} vnode
+ * @returns
+ *
+ *
+ * 根据虚拟DOM的type类型将虚拟节点转换为真实节点；
+ * 如果虚拟DOM类型是number或者string，调用updateTextComponent
+ * 如果虚拟DOM的type类型为string,调用updateHostComponent
+ * 如果虚拟DOM的type类型为function,还要判断函数是否是reactComponent
+ * type.prototype.isReactComponent有值 调用updateClassComponent
+ * 如果type.prototype.isReactComponent没有值 调用updateFunctionComponent
+ * 其他类型判断为fragment标签，调用updateFragmentComponent
+ * 最后返回真实节点
+ *
+ */
 function createNode(vnode) {
   const { type } = vnode
   let node

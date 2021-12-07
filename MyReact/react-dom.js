@@ -12,10 +12,8 @@ function isStringOrNumber(sth) {
 }
 //将虚拟节点转换为真是节点
 function createNode(vnode) {
-  console.log('vnode', vnode)
   const { type } = vnode
   let node
-
   //原生标签节点
   if (typeof type === 'string') {
     node = updateHostComponent(vnode)

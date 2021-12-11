@@ -2,7 +2,8 @@
   "scripts": {
     "test": "jest --watchAll",
     "coverage": "jest --coverage",
-    "push": "node gitPush.js"
+    "push": "node gitPush.js",
+    "pull": "node gitPull.js"
   },
   "dependencies": {
     "chokidar": "^3.5.2",

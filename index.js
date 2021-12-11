@@ -1,20 +1,16 @@
-function checkDateFormat(s) {
-  let string = s
-  if (
-    /^\d{4}-\d{2}-\d{2}$/.test(s) ||
-    /^\d{4}.\d{2}.\d{2}$/.test(s) ||
-    /^\d{4}_\d{2}_\d{2}$/.test(s)
-  ) {
-    string = s.replace(/[._-]/g, '')
+function widthOfBinaryTree(root: TreeNode | null): bigint {
+  let max = 1n,
+    map = new Map()
+  const dfs = (node: TreeNode, level: number, pos: bigint): bigint => {
+    if (!map.has(level)) {
+      map.set(level, pos)
+    } else {
+      const val = pos - (map.get(level) || 0n) + 1n
+      if (val > max) max = val
+    }
+    node.left && dfs(node.left, level + 1, pos * 2n)
+    node.right && dfs(node.right, level + 1, pos * 2n + 1n)
+    return max
   }
-  if (string.length === 8) {
-    const year = string.substring(0, 4)
-    const month = string.substring(4, 6)
-    const day = string.substring(6, 8)
-    const current = new Date(`${year}.${month}.${day}`)
-    return current.toString() === 'Invalid Date'
-  }
-  return false
+  return root ? dfs(root, 1, 1n) : 0n
 }
-const path = require('path')
-console.log('path.resolve(__dirname)', path.resolve(__dirname, 'github-db'))

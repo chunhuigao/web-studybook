@@ -8,7 +8,7 @@ function createTreeByArray(list) {
   if (list.length === 0) return null
   let tree = new TreeNode(list[0])
   let root = [tree]
-  let index = 1
+  let index = 1;
   for (node of root) {
     root.push((node.left = new TreeNode(list[index])))
     index++
@@ -17,8 +17,6 @@ function createTreeByArray(list) {
     index++
     if (index === list.length) return tree
   }
-
-  //return root
 }
 
 function convertBinaryTree(list) {
@@ -54,6 +52,7 @@ function convertBinaryTree(list) {
   })
   return root
 }
-var array = ['1', '2', '3', '4', '5']
-const aa = createTreeByArray(array)
-console.log(aa)
+module.exports = {
+  createTreeByArray,
+}
+

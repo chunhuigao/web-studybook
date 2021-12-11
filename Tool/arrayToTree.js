@@ -1,3 +1,26 @@
+//通过数组创建二叉树
+function createTreeByArray(list) {
+  function TreeNode(val) {
+    this.val = val
+    this.left = null
+    this.right = null
+  }
+  if (list.length === 0) return null
+  let tree = new TreeNode(list[0])
+  let root = [tree]
+  let index = 1
+  for (node of root) {
+    root.push((node.left = new TreeNode(list[index])))
+    index++
+    if (index === list.length) return tree
+    root.push((node.right = new TreeNode(list[index])))
+    index++
+    if (index === list.length) return tree
+  }
+
+  //return root
+}
+
 function convertBinaryTree(list) {
   let root
 
@@ -31,3 +54,6 @@ function convertBinaryTree(list) {
   })
   return root
 }
+var array = ['1', '2', '3', '4', '5']
+const aa = createTreeByArray(array)
+console.log(aa)

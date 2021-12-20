@@ -2,6 +2,25 @@
 
 ## 2021.12.19
 
+### 任务队列
+
+1、 Offer 40. 最小的 k 个数 https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof  
+2、 最后一块石头的重量 https://leetcode-cn.com/problems/last-stone-weight  
+3、 数据流中的第 K 大元素 https://leetcode-cn.com/problems/kth-largest-element-in-a-stream  
+4、 查找和最小的 K 对数字 https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums  
+5、 数组中的第 K 个最大元素 https://leetcode-cn.com/problems/kth-largest-element-in-an-array  
+6、 设计推特 https://leetcode-cn.com/problems/design-twitter  
+7、 前 K 个高频单词 https://leetcode-cn.com/problems/top-k-frequent-words  
+8、面试题 连续中值 https://leetcode-cn.com/problems/continuous-median-lcci  
+9、 数据流的中位数 https://leetcode-cn.com/problems/find-median-from-data-stream
+
+### 今日完成
+
+完成[最小的 k 个数](https://juejin.cn/post/7043604185257869319)并输出到掘金
+完成[最后一块石头的重量](https://juejin.cn/post/7043336693499297806)并输出到掘金
+
+## 2021.12.18
+
 [N 叉树的前序遍历](https://juejin.cn/post/7042956577703198728)\
 [翻转二叉树](https://juejin.cn/post/7042958658317090830)\
 [从上到下打印二叉树 II](https://juejin.cn/post/7042963563035492360)\

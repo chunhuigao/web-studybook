@@ -1,7 +1,13 @@
 # 学习笔记
 
-## 2021.12.19
+## 2021.12.20
 
+[最小的 k 个数](https://juejin.cn/post/7043604185257869319)
+
+[查找和最小的 K 对数字](https://juejin.cn/post/7043749205197733895)
+
+[丑数与超级丑数](https://juejin.cn/post/7043787739384266789)
+## 2021.12.19
 ### 任务队列
 
 1、 Offer 40. 最小的 k 个数 https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof  

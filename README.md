@@ -1,5 +1,13 @@
 # 学习笔记
 
+## 2021.12.21
+
+[移除石子的最大得分](https://juejin.cn/post/7043973178049167367)
+
+[设计推特](https://juejin.cn/post/7044158727418544141)
+
+[前 K 个高频单词](https://juejin.cn/post/7044169397178466312)
+
 ## 2021.12.20
 
 [最小的 k 个数](https://juejin.cn/post/7043604185257869319)
@@ -7,7 +15,9 @@
 [查找和最小的 K 对数字](https://juejin.cn/post/7043749205197733895)
 
 [丑数与超级丑数](https://juejin.cn/post/7043787739384266789)
+
 ## 2021.12.19
+
 ### 任务队列
 
 1、 Offer 40. 最小的 k 个数 https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof  

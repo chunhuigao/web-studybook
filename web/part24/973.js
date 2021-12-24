@@ -1,4 +1,4 @@
-//973. 最接近原点的 K 个点
+
 
 var kClosest = function (points, k) {
   const list = []

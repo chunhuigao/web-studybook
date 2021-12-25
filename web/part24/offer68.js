@@ -1,11 +1,8 @@
 var lowestCommonAncestor = function (root, p, q) {
-  return helper(root)
-  function helper(node) {
-    if (node === null) return null
-    if (node === p || node === q) return node
-    const left = helper(node.left)
-    const right = helper(node.right)
-    if (left && right) return node
-    return left ? left : right
-  }
+  if (root === null) return
+  if (root.val > p.val && root.val > q.val)
+    return lowestCommonAncestor(root.left, p, q)
+  if (root.val < p.val && root.val < q.val)
+    return lowestCommonAncestor(root.right, p, q)
+  return root
 }

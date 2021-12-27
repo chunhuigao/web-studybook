@@ -70,3 +70,9 @@ class Heap {
     }
   }
 }
+
+const heap = new Heap((a, b) => a < b)
+heap.push(9)
+heap.push(20)
+heap.push(30)
+console.log('heap', heap)

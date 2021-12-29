@@ -10,18 +10,23 @@ var findCircleNum = function (isConnected) {
       }
     }
   }
+
   let result = 0
   for (let i = 0; i < list.length; i++) {
     if (list[i] === i) result++
   }
+
   return result
   function marge(i, j) {
+    //console.log('list', list)
     if (i === j) return
     // 得到i的表头
     const x = loop(i)
     // 得到j的表头
     const y = loop(j)
     list[x] = y
+    const array = list.map((v) => v + 1)
+    console.log('array', i, j, array)
   }
 
   function loop(n) {
@@ -31,3 +36,18 @@ var findCircleNum = function (isConnected) {
     return list[n]
   }
 }
+//1,2
+// 3,6,
+// 2,3,
+//4,5
+const isConnected = [
+  [1, 1, 0, 0, 0, 0],
+  [1, 1, 1, 0, 0, 0],
+  [0, 1, 1, 0, 0, 1],
+  [0, 0, 0, 1, 1, 0],
+  [0, 0, 0, 1, 1, 0],
+  [0, 0, 1, 0, 0, 1],
+]
+
+const aa = findCircleNum(isConnected)
+console.log(aa)

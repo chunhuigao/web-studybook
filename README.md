@@ -1,5 +1,19 @@
 # 学习笔记
 
+## 2022.01.02
+
+[将一维数组转变成二维数组](https://juejin.cn/post/7048581548106317837)
+
+[leetcode274 周赛 1](https://juejin.cn/post/7048606871476764679)
+
+[leetcode274 周赛 2](https://juejin.cn/post/7048608524590383141)
+
+[leetcode274 周赛 3](https://juejin.cn/post/7048610061350305823)
+
+## 2022.01.01
+
+[盛最多水的容器](https://juejin.cn/post/7048187254463791111)
+
 ## 2021.12.31
 
 [用 Rand7() 实现 Rand10()](https://juejin.cn/post/7047857658858045477)

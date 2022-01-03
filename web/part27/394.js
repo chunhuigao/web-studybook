@@ -1,23 +1,16 @@
 var decodeString = function (s) {
-  const len = s.length
-  const stack = []
-  let string = ''
-  let num = ''
-  for (let i = 0; i < len; i++) {
-    if (s[i] >= 0 && s[i] <= 9) {
-      num += s[i]
-    } else if (s[i] === '[') {
-      stack.push(string, num)
-      num = ''
-      string = ''
-    } else if (s[i] === ']') {
-      const pop1 = stack.pop()
-      const pop2 = stack.pop()
-      console.log('pop', pop1, string)
-    } else {
-      string += s[i]
-    }
+  let reg = /(\d+)\[([a-zA-Z]+)\]/g
+  while (s.indexOf('[') > 0) {
+    s = s.replace(reg, (_, ...[num, str]) => {
+      console.log(num, str)
+      let result = ''
+      for (let i = 0; i < num - 0; i++) {
+        result += str
+      }
+      return result
+    })
   }
+  return s
 }
-var s = '3[a]2[bc]fg'
+var s = '3[a2[c]]'
 const aa = decodeString(s)

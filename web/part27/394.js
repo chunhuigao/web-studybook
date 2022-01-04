@@ -1,16 +1,27 @@
-var decodeString = function (s) {
-  let reg = /(\d+)\[([a-zA-Z]+)\]/g
-  while (s.indexOf('[') > 0) {
-    s = s.replace(reg, (_, ...[num, str]) => {
-      console.log(num, str)
-      let result = ''
-      for (let i = 0; i < num - 0; i++) {
-        result += str
-      }
-      return result
-    })
+const decodeString = (s) => {
+  const stack = []
+  const string = []
+  let num = ''
+  let result = ''
+  for (let i = 0; i < s.length; i++) {
+    const k = s[i]
+    if (!isNaN(k)) {
+      num += k
+    } else if (k === '[') {
+      stack.push(num)
+      string.push(result)
+      num = ''
+      result = ''
+    } else if (k === ']') {
+      const currentNum = stack.pop()
+      result = string.pop() + result.repeat(Number(currentNum))
+    } else {
+      result += k
+    }
   }
-  return s
+  return result
 }
+
 var s = '3[a2[c]]'
 const aa = decodeString(s)
+console.log(aa)

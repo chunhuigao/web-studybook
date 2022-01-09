@@ -1,7 +1,3 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
 var minSwaps = function (nums) {
   const len = nums.length
   let one = 0
@@ -15,19 +11,15 @@ var minSwaps = function (nums) {
   let min = Infinity
   const list = nums.concat(nums)
   min = Math.min(min, zreo)
-  console.log('list', list)
+
   for (let i = one; i < list.length; i++) {
-    if (i === 7) {
-      console.log('zreo1', zreo)
-      console.log('zreo2', nums[i], nums[i - one])
-    }
-    if (nums[i] === 0) {
+    if (list[i] === 0) {
       zreo = zreo + 1
     }
-    if (nums[i - one] === 0) {
+    if (list[i - one] === 0) {
       zreo = zreo - 1
     }
-    // console.log('zreo', i, zreo)
+
     min = Math.min(min, zreo)
   }
   return min

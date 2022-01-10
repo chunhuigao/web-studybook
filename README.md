@@ -1,6 +1,16 @@
 # 学习笔记
 
-## 2022.01.08
+## 2022.01.09
+
+[leetcode 275 周赛 1](https://juejin.cn/post/7051167279068741646)
+
+[leetcode 275 周赛 2](https://juejin.cn/post/7051169101401554975)
+
+[leetcode 275 周赛 3](https://juejin.cn/post/7051183382323003429)
+
+[leetcode 275 周赛 4](https://juejin.cn/post/7051184778602610725)
+
+## 2022.01.07
 
 [排序数组](https://juejin.cn/post/7050503323396341767)
 

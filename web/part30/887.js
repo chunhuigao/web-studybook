@@ -1,7 +1,4 @@
 var superEggDrop = function (K, N) {
-  // 每一个鸡蛋扔的次数大致相同
-  // 对于f层
-  // 把鸡蛋放在x层鸡蛋碎了 f层数在x之下，没碎，f在x之上
   const map = new Map()
   return helper(K, N)
   function helper(k, n) {
@@ -33,4 +30,16 @@ var superEggDrop = function (K, N) {
     }
     return map.get(key)
   }
+}
+
+var superEggDrop = function (K, N) {
+  let array = Array(K + 1).fill(0)
+  let result = 0
+  while (array[K] < N) {
+    result++
+    for (let i = K; i > 0; i--) {
+      array[i] = array[i - 1] + array[i] + 1
+    }
+  }
+  return result
 }

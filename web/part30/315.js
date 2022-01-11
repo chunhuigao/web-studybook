@@ -3,6 +3,7 @@ var countSmaller = function (nums) {
   let result = Array(len).fill(0)
   const list = nums.map((v, i) => ({ num: v, index: i }))
   mergeSort(list)
+
   return result
   function mergeSort(nums) {
     //获取数组长度
@@ -30,9 +31,11 @@ var countSmaller = function (nums) {
     let r = 0
     let list = []
     while (l < left.length && r < right.length) {
+      //console.log('left', left)
       if (left[l].num <= right[r].num) {
         list.push(left[l])
-        result[left[l].index] += right.length - r
+
+        result[left[l].index] += r
         l++
       } else {
         list.push(right[r])
@@ -40,34 +43,42 @@ var countSmaller = function (nums) {
         r++
       }
     }
-    // 这两行代码省去了两个判断
-    list = list.concat(left.slice(l, left.length))
-    list = list.concat(right.slice(r, right.length))
+    if (l === left.length) {
+      list = list.concat(right.slice(r, right.length))
+    }
+    if (r === right.length) {
+      while (l < left.length) {
+        list.push(left[l])
+        result[left[l].index] += r
+        l++
+      }
+    }
+
     return list
   }
 }
 
-var countSmaller = function (nums) {
-  const len = nums.length
-  let list = []
-  let result = Array(len)
-  for (let i = len - 1; i >= 0; i--) {
-    let l = 0
-    let r = list.length
-    while (l < r) {
-      const mid = l + Math.floor((r - l) / 2)
-      if (list[mid] >= nums[i]) {
-        r = mid
-      } else {
-        l = mid + 1
-      }
-    }
-    result[i] = l
-    list.splice(l, 0, nums[i])
-  }
+// var countSmaller = function (nums) {
+//   const len = nums.length
+//   let list = []
+//   let result = Array(len)
+//   for (let i = len - 1; i >= 0; i--) {
+//     let l = 0
+//     let r = list.length
+//     while (l < r) {
+//       const mid = l + Math.floor((r - l) / 2)
+//       if (list[mid] >= nums[i]) {
+//         r = mid
+//       } else {
+//         l = mid + 1
+//       }
+//     }
+//     result[i] = l
+//     list.splice(l, 0, nums[i])
+//   }
 
-  return result
-}
+//   return result
+// }
 
 var nums = [5, 2, 6, 1]
 const aa = countSmaller(nums)

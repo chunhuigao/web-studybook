@@ -68,24 +68,18 @@ class Heap {
 var rangeSum = function (nums, n, left, right) {
   const len = nums.length
   const list = nums.map((v, i) => [v, i])
-  const minHead = new Heap(function (a, b) {
-    // console.log('a,b', a, b);
-    return a[0] < b[0]
-  })
-  // minHead.push(list[0]);
+  const minHead = new Heap((a, b) => a[0] < b[0])
+
   const result = []
   for (let i = 0; i < n; i++) {
     minHead.push(list[i])
   }
-  //console.log('minHead', minHead);
   while (!minHead.isEmpty()) {
     const [t, index] = minHead.pop()
     if (index < len - 1) {
       minHead.push([t + nums[index + 1], index + 1])
     }
     result.push(t)
-    // console.log('minHead', minHead.list);
-    //console.log('result', result);
     if (result.length === right) {
       const t = result.slice(left - 1, right).reduce((a, b) => a + b)
       return t % 1000000007

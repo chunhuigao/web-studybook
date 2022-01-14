@@ -1,5 +1,13 @@
 # 学习笔记
 
+## 2022.01.14
+
+学习如何维护开源，提交 pr[https://github.com/varletjs/varlet-nuxt3-example/pull/3]
+
+## 2022.01.13
+
+[最大子数组和](https://juejin.cn/post/7053098020715364359)
+
 ## 2022.01.12
 
 [计算右侧小于当前元素的个数](https://juejin.cn/post/7051981786263322632)

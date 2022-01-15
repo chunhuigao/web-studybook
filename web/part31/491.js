@@ -1,12 +1,14 @@
+let index = 0
 const findSubsequences = (nums) => {
   const len = nums.length
   const set = new Set()
   for (let i = 0; i < len; i++) {
     helper(i, String(nums[i]))
   }
-  console.log('set', set)
+  console.log('set', index)
 
   function helper(i, s) {
+    index++
     // i是起点，s是字符串
     if (i === len) return
     if (set.has(s)) return
@@ -24,6 +26,6 @@ const findSubsequences = (nums) => {
   return result
 }
 
-var nums = [4, 6, 7, 7]
+var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 const aa = findSubsequences(nums)
-console.log(aa)
+//console.log(aa)

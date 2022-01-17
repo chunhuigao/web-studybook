@@ -4,6 +4,16 @@
 
 [统计元音字母序列的数目](https://juejin.cn/post/7054192504463163399)
 
+## 2022.01.16
+
+[求和路径](https://juejin.cn/post/7053798082047115300)
+
+[将字符串拆分为若干长度为 k 的组](https://juejin.cn/post/7053805063487586341)
+
+[得到目标值的最少行动次数](https://juejin.cn/post/7053807350804643853)
+
+[解决智力问题](https://juejin.cn/post/7053815820580814878)
+
 ## 2022.01.14
 
 [学习如何维护开源，提交 pr](https://github.com/varletjs/varlet-nuxt3-example/pull/3)

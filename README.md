@@ -1,8 +1,12 @@
 # 学习笔记
 
+## 2022.01.17
+
+[统计元音字母序列的数目](https://juejin.cn/post/7054192504463163399)
+
 ## 2022.01.14
 
-学习如何维护开源，提交 pr[https://github.com/varletjs/varlet-nuxt3-example/pull/3]
+[学习如何维护开源，提交 pr](https://github.com/varletjs/varlet-nuxt3-example/pull/3)
 
 ## 2022.01.13
 

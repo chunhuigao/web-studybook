@@ -1,5 +1,11 @@
 # 学习笔记
 
+## 2022.01.20
+
+[认识 call、apply、bind](https://juejin.cn/post/7055251598745796615)
+
+[掘金 Markdown 快速入门](https://juejin.cn/post/7055197620800602119)
+
 ## 2022.01.17
 
 [统计元音字母序列的数目](https://juejin.cn/post/7054192504463163399)

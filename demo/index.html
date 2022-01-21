@@ -9,25 +9,15 @@
 </head>
 
 <body>
-  <a id="btn" class="item like" onclick="tip(1)">触发onclick</a>
-  <a id="btn" class="item like" onclick="tip(2)">触发onclick</a>
-
+  <div id='box'>
+    <span>ceshi</span>
+    <span>ceshi2</span>
+  </div>
 </body>
-
-<script type="text/javascript">
-  function tip(msg) {
-    console.log('msg', msg)
-  }
-  // 三秒后模拟点击
-  setTimeout(function () {
-    // IE浏览器
-    var t = document.getElementsByClassName('item like')
-    for (let i = 0; i < t.length; i++) {
-      t[i].click()
-    }
-
-
-  }, 1000);
+<script>
+  const oBox = document.getElementById('box')
+  const html = oBox.innerHTML
+  console.log('html', html)
 </script>
 
 </html>

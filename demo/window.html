@@ -12,7 +12,18 @@
 
 </body>
 <script>
-  open()
+  var count = 0;
+  var list = []
+  for (key in window) {
+    console.log('Object.prototype.toString.call(window[key]) ', Object.prototype.toString.call(window[key]))
+    if (Object.prototype.toString.call(window[key]) == '[object object]') {
+      list.push(key);
+      count++
+    }
+
+  }
+  console.log(count)
+  console.log(list)
 </script>
 
 </html>

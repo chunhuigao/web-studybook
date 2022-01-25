@@ -1,5 +1,13 @@
 # 学习笔记
 
+## 2022.01.24
+
+[React 学习-Virtual DOM](https://juejin.cn/post/7056664167243055141)
+
+[React 学习-协调核心 diff 算法](https://juejin.cn/post/7056690179553099813)
+
+[字符频次唯一的最小删除次数](https://juejin.cn/post/7056748758511386638)
+
 ## 2022.01.21
 
 [课程表](https://juejin.cn/post/7055639551594725389)

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+  <img id='img'
+    src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/61c2ac17facb498f87cfea76d19ce5a9~tplv-k3u1fbpfcp-no-mark:240:240:240:160.awe?">
+
+</body>
+<script>
+  window.onerror = function (e) {
+    console.log('eeee1', e)
+  }
+</script>
+<script>
+  function onload(e) {
+    console.log('onload', e)
+
+  }
+  function ceshi(e) {
+    console.log('ceshi', e)
+
+  }
+  var img_selector = document.querySelector("img");//查询 id 为 img 的节点
+
+  //监听图片加载完成事件
+  img_selector.addEventListener("load", function () {
+    console.log("图片加载完成事件");
+  });
+
+  //监听图片加载失败事件
+  img_selector.addEventListener("error", function (e) {
+    console.log("图片加载失败事件", e);
+  });
+
+</script>
+
+</html>

@@ -1,5 +1,13 @@
 # 学习笔记
 
+## 2022.01.26
+
+[JavaScript 并查集 ](https://juejin.cn/post/7057505744878305310)
+
+## 2022.01.25
+
+[最多可以参加的会议数目](https://juejin.cn/post/7057160682441015332)
+
 ## 2022.01.24
 
 [React 学习-Virtual DOM](https://juejin.cn/post/7056664167243055141)

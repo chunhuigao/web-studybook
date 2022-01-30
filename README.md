@@ -1,5 +1,15 @@
 # 学习笔记
 
+## 2022.01.27
+
+[JavaScript 实现 Sqrt(x) ](https://juejin.cn/post/7057829247729025037)
+
+[搜索插入位置](https://juejin.cn/post/7057843102689525768)
+
+[两数之和](https://juejin.cn/post/7057850340757995556)
+
+[在排序数组中查找元素的第一个和最后一个位置](https://juejin.cn/post/7057896749683179557)
+
 ## 2022.01.26
 
 [JavaScript 并查集 ](https://juejin.cn/post/7057505744878305310)

@@ -1,5 +1,13 @@
 # 学习笔记
 
+## 2022.02.02
+
+[leetcode 第 278 周竞赛（上）](https://juejin.cn/post/7059921106949373966)
+
+[leetcode 第 278 周竞赛（中）](https://juejin.cn/post/7059940345756254215)
+
+[leetcode 第 278 周竞赛（下）](https://juejin.cn/post/7060148614961561613)
+
 ## 2022.01.29
 
 [搜索旋转排序数组 II](https://juejin.cn/post/7058576201786327048)

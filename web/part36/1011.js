@@ -1,31 +1,27 @@
-var shipWithinDays = function (weights, D) {
-  const len = weights.length
-  let max = 0
-  let sum = 0
+var maxScoreIndices = function (nums) {
+  let one = 0
+  const len = nums.length
   for (let i = 0; i < len; i++) {
-    sum += weights[i]
-    max = Math.max(max, weights[i])
+    if (nums[i] === 1) one++
   }
-  let left = Math.max(max, Math.ceil(sum / D))
-  let right = sum
-  while (left < right) {
-    let mid = left + Math.floor((right - left) / 2)
-    if (helper(mid, D)) {
-      right = mid
+  let map = {}
+  let max = one
+  map[one] = [0]
+  let zero = 0
+  for (let i = 1; i <= len; i++) {
+    if (nums[i - 1] === 0) zero++
+    if (nums[i - 1] === 1) one--
+    const k = zero + one
+
+    max = Math.max(max, k)
+    if (map[k] === undefined) {
+      map[k] = [i]
     } else {
-      left = mid + 1
+      map[k].push(i)
     }
   }
-  return left
-  function helper(targe, day) {
-    let num = 0
-    for (let i = 0; i < len; i++) {
-      if (num + weights[i] > targe) {
-        num = 0
-        day--
-      }
-      num += weights[i]
-    }
-    return day > 0
-  }
+  return map[max]
 }
+var nums = [1, 1]
+var aa = maxScoreIndices(nums)
+console.log('kkk', aa)

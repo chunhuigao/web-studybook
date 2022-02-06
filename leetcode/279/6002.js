@@ -1,7 +1,6 @@
 class Bitset {
   constructor(size) {
     this.list = Array(size).fill(0)
-    // 0，0011 ，1 1100
     this.sign = 0
     this.oneNumber = 0
   }
@@ -51,12 +50,9 @@ class Bitset {
   }
   toString() {
     let s = ''
+    if (this.sign === 0) return this.list.join('')
     for (let i = 0; i < this.list.length; i++) {
-      if (this.sign === 0) {
-        s += this.list[i]
-      } else {
-        s += this.list[i] ? 0 : 1
-      }
+      s += this.list[i] ? 0 : 1
     }
     return s
   }

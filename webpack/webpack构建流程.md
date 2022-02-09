@@ -1,3 +1,5 @@
+简述 Webpack 的原理与构建过程
+
 ## webpack 原理
 
 webpack 只是一个打包模块的机制，只是把依赖的模块转化成可以代表这些包的静态文件
@@ -20,9 +22,14 @@ webpack 只是一个打包模块的机制，只是把依赖的模块转化成可
 - plugin，配置扩展插件，扩展 webpack 的更多功能。
 - devServer，配置 DevServer，实现本地 http 服务、模块热替换、source map 调试等。
 
-## 简单的webpack
+## 简单的 webpack
+
 - 读取文件分析模块依赖
 - 对模块进行解析执行(深度遍历)
-- 针对不同的模块使用相应的loader
-- 编译模块，生成抽象语法树AST。
-- 循环遍历AST树，拼接输出js。
+- 针对不同的模块使用相应的 loader
+- 编译模块，生成抽象语法树 AST。
+- 循环遍历 AST 树，拼接输出 js。
+
+- webpack 是运行在 node 环境中的 js 打包工具
+- webpack 通过配置项，将 enter 入口指定的文件通过 loader、plugin 等规则打包成浏览器可运行的 js 文件；
+-

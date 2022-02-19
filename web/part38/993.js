@@ -1,57 +1,18 @@
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @param {number} x
- * @param {number} y
- * @return {boolean}
- */
 var isCousins = function (root, x, y) {
-  let xLevel = -1
-  let yLevel = -1
-  let sign = 1
-  dfs(root, 0)
-  //console.log('xLevel',xLevel,yLevel)
-  if (sign) {
-    return xLevel === yLevel
-  } else {
-    return false
-  }
+  return dfs(root, 0) === -1
   function dfs(node, level) {
-    if (node === null) return
-    if (node.val === x) xLevel = level
-    if (node.val === y) yLevel = level
-    if (
-      node &&
-      node.left &&
-      node.left.val === x &&
-      node &&
-      node.right &&
-      node.right.val === y
-    ) {
-      sign = 0
-      return
+    if (!node) return 0
+    if (node.val == x || node.val == y) return depth
+    const l = dfs(node.left, x, y, depth + 1)
+    const r = dfs(node.right, x, y, depth + 1)
+    if (l < 0) return l
+    if (r < 0) return r
+    if (l > 0 && r > 0) {
+      if (l == r && l != depth + 1) return -1
+      else return -2
     }
-
-    if (
-      node &&
-      node.left &&
-      node.left.val === y &&
-      node &&
-      node.right &&
-      node.right.val === x
-    ) {
-      sign = 0
-      return
-    }
-
-    dfs(node.left, level + 1)
-    dfs(node.right, level + 1)
+    if (l > 0) return l
+    if (r > 0) return r
+    return 0
   }
 }

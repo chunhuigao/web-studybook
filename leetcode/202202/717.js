@@ -5,7 +5,7 @@ var isOneBitCharacter = function (bits) {
   while (idx < len - 1) {
     if (bits[idx] === 0) {
       idx += 1
-    } else if (bits[idx] === 1) {
+    } else {
       idx += 2
     }
   }

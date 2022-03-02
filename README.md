@@ -1,5 +1,15 @@
 # 学习笔记
 
+## 2022.03.01
+
+- [template-px2rem-loader](https://www.npmjs.com/package/template-px2rem-loader)
+  - 主要作用是将 vue 中 template 内连样式 px 转换为 rem
+
+## 2022.02.28
+
+- [256. 粉刷房子](https://juejin.cn/post/7069769241313935397)
+  - 动态规划
+
 ## 2022.02.27
 
 - [1760. 袋子里最少数目的球](https://juejin.cn/post/7068820550822887455)

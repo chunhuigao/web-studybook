@@ -1,5 +1,11 @@
 # 学习笔记
 
+## 2022.03.06
+
+- 参加 leetcode 周赛
+  - [6016. Excel 表中某个范围内的单元格](https://leetcode-cn.com/submissions/detail/278051865/)
+  - [6018. 根据描述创建二叉树](https://leetcode-cn.com/submissions/detail/278387955/)
+
 ## 2022.03.01
 
 - [template-px2rem-loader](https://www.npmjs.com/package/template-px2rem-loader)

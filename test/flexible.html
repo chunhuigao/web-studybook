@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0
+    }
+
+    .container {
+      width: 10.8rem;
+      height: 300px;
+      background-color: red;
+    }
+
+    .box {
+      width: 10rem;
+      height: 50px;
+      background-color: blue;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <div class="box">我是测试</div>
+  </div>
+</body>
+<script>
+
+  /**
+   * 一个目的：根据不同屏幕的宽度，以相同的比例动态修改html的font-size大小
+   * 获取不同的屏幕宽度,获取Element根元素document的clientWidth
+   * 相同的比例，现在代码中默认根据宽度为1080px
+   * 通过获取根节点fontSize；通过 (width / designScale / rootFontSize) * 100 + '%';公式计算根阶段缩放百分比
+   * 因为根节点fontSize根据窗口宽度定义，所以在窗口发生变化时需要重新计算，所以监听了窗口变化事件
+   * 
+   * 补充：
+   * maxwidth = 540 
+   * 只对dpr=1 ,[0,540px]限制范围适配。
+   * 只对dpr=2 ,[0,1080px]限制范围适配。
+   **/
+  (function (win, document) {
+    var documentEl = document.documentElement;
+    var maxwidth = 540;
+    // 物理像素和设备独立像素比。1px等于2px的物理像素
+    var dpr = devicePixelRatio === 4 ? 1 : devicePixelRatio;
+
+    // dpr= dpr >= 3 ? 3:(dpr >= 2 ? 2 : 1); 
+
+    var tid = null;
+    //允许无论是在读取模式和写入模式下访问在 HTML或 DOM中的元素上设置的所有自定义数据属性
+    documentEl.dataset.dpr = dpr;
+    // 设计宽度
+    var designScale = (documentEl.dataset.width || 1080) / 100;
+    console.log('designScale', designScale)
+    // 获取document的默认fontSize
+    var rootFontSize = parseFloat(getComputedStyle(documentEl).fontSize);
+    var refreshRem = function () {
+      var width = documentEl.clientWidth;
+
+      if (width / dpr > maxwidth) {
+        width = maxwidth * 1;
+      }
+      // 设置html的fontSize
+      documentEl.style.fontSize =
+        (width / designScale / rootFontSize) * 100 + '%';
+
+      documentEl.style.fontSize = width / designScale + 'px'
+      //   console.log('width / designScale', width / designScale)
+    };
+    refreshRem();
+
+    // 监听窗口变化事件
+    win.addEventListener(
+      'resize',
+      function () {
+        clearTimeout(tid);
+        tid = setTimeout(refreshRem, 300);
+      },
+      false
+    );
+    // 当一条会话历史记录被执行的时候将会触发页面显示(pageshow)事件
+    // 监听历史记录中的页面
+    win.addEventListener(
+      'pageshow',
+      function (e) {
+        // 表示网页是否来自缓存
+        if (e.persisted) {
+          clearTimeout(tid);
+          tid = setTimeout(refreshRem, 300);
+        }
+      },
+      false
+    );
+
+    // 监听加载完成事件
+    win.addEventListener(
+      'DOMContentLoaded',
+      function (e) {
+        var body = document.getElementsByTagName('body')[0];
+        body.style.maxWidth = designScale + 'rem';
+        body.style.margin = '0 auto';
+      },
+      false
+    );
+  })(window, document);
+
+
+</script>
+
+</html>

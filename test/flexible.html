@@ -50,7 +50,10 @@
     var documentEl = document.documentElement;
     var maxwidth = 540;
     // 物理像素和设备独立像素比。1px等于2px的物理像素
+
     var dpr = devicePixelRatio === 4 ? 1 : devicePixelRatio;
+
+    var dpr = devicePixelRatio > 3 ? 3 : devicePixelRatio;
 
     // dpr= dpr >= 3 ? 3:(dpr >= 2 ? 2 : 1); 
 

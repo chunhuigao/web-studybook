@@ -1,5 +1,9 @@
 # 学习笔记
 
+## 2022.03.23
+
+- [leetcode-400 字典序的第 K 小数字](https://juejin.cn/post/7078246470914146312)
+
 ## 2022.03.19
 
 - [从零搭一个极简版 webpack+React 工程（支持 React 和 Typescript）](https://juejin.cn/post/7076458060721422344)

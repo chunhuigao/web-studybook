@@ -1,6 +1,7 @@
 ```js
-//
-// 谷歌地图是show执行地图渲染
+## 起初百度地图谷歌地图方法一致
+
+// 谷歌地图
 var googleMap = {
   show: function () {
     console.log('谷歌地图.');
@@ -12,7 +13,34 @@ var googleMap = {
     // 打开
   },
 };
-// 百度是 display 执行地图渲染
+
+// 百度地图
+var baiduMap = {
+  show: function () {
+    console.log('谷歌地图.');
+  },
+  start: function () {
+    // 开始
+  },
+  off: function () {
+    // 打开
+  },
+};
+
+## 后来，他们渐行渐远
+// 谷歌地图
+var googleMap = {
+  show: function () {
+    console.log('谷歌地图.');
+  },
+  start: function () {
+    // 开始
+  },
+  off: function () {
+    // 打开
+  },
+};
+// 百度,变了，原来start修改为init，off修改为open
 var baiduMap = {
   show: function () {
     console.log('百度地图.');
@@ -25,7 +53,26 @@ var baiduMap = {
   },
 };
 
-// 百度地图的适配器
+## 但是 renderMap 逻辑已经写好，且极度复杂
+
+var renderMap = function (map) {
+  if (map.show instanceof Function) {
+    map.start();
+    // other
+    // ajax
+    // deal data
+
+
+    // 各种个样的操作，逻辑很复杂
+    map.show();
+  }
+};
+renderMap(googleMap);
+renderMap(baiduMap);
+
+## 我不想重写 renderMap，所以我想到的适配器
+
+// 写一个适配器
 var baiduMapAdapter = {
   show: function () {
     baiduMap.display();
@@ -33,21 +80,21 @@ var baiduMapAdapter = {
   start: function () {
     baiduMap.init();
   },
+  off: function () {
+    baiduMap.open();
+  },
 };
 
-// 我不管各地图本身调用什么方法执行地图渲染，我只用show这个方法执行地图渲染，其它交给适配器，这就是适配器模式；
-var renderMap = function (map) {
-  if (map.show instanceof Function) {
-    map.start();
-    // other
-    // ajax
-    // deal data
-    map.show();
-  }
-};
 
+
+## 最后 renderMap 又可以使用了
 renderMap(googleMap);
+
+// 只是，这里调用百度的时候要调用适配器
 renderMap(baiduMapAdapter);
+
+
+
 ```
 
 ## 参考文档

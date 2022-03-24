@@ -1,16 +1,89 @@
-function widthOfBinaryTree(root: TreeNode | null): bigint {
-  let max = 1n,
-    map = new Map()
-  const dfs = (node: TreeNode, level: number, pos: bigint): bigint => {
-    if (!map.has(level)) {
-      map.set(level, pos)
-    } else {
-      const val = pos - (map.get(level) || 0n) + 1n
-      if (val > max) max = val
-    }
-    node.left && dfs(node.left, level + 1, pos * 2n)
-    node.right && dfs(node.right, level + 1, pos * 2n + 1n)
-    return max
+// var minimalKSum = function (nums, k) {
+//   nums.sort((a, b) => a - b)
+//   let total = BigInt(k)
+//   const list = nums.map((v) => BigInt(v))
+//   const len = nums.length
+//   let result = 0n
+//   if (BigInt(list[0]) !== 1n) {
+//     const l = list[0] - 1n
+//     const x = 1n
+//     const y = list[0] - 1n
+//     if (l >= total) {
+//       return ((x + y) * total) / 2n
+//     }
+//     result = ((x + y) * l) / 2n
+//     total -= l
+//   }
+
+//   for (let i = 1; i < len; i++) {
+//     if (list[i] > list[i - 1] + 1n) {
+//       const l = list[i] - (list[i - 1] + 1n)
+//       if (l >= total) {
+//         let x = list[i - 1] + 1n
+//         let y = list[i - 1] + total
+//         result = result + ((x + y) * total) / 2n
+//         return result
+//       } else {
+//         let x = list[i - 1] + 1n
+//         let y = list[i] - 1n
+//         result += ((x + y) * l) / 2n
+//         total -= l
+//       }
+//     }
+//   }
+//   console.log('result', result)
+//   if (total > 0) {
+//     let x = list[len - 1] + 1n
+//     let y = list[len - 1] + total
+//     console.log(' ((x + y) * total) / 2n', ((x + y) * total) / 2n)
+//     result += ((x + y) * total) / 2n
+//   }
+//   return Number(result)
+// }
+
+function minimalKSum() {
+  nums.sort((a, b) => a - b)
+  let sum = (BigInt(k) * (BigInt(k) + 1n)) / 2n
+  for (let i = 0; i < nums.length; i++) {
+    sum +=
+      BigInt(nums[i]) <= BigInt(k) && (i == 0 || nums[i] != nums[i - 1])
+        ? BigInt(++k) - BigInt(nums[i])
+        : 0n
   }
-  return root ? dfs(root, 1, 1n) : 0n
+  return sum
 }
+// var nums = [
+//     59960546, 85045629, 93, 43, 1, 109, 114, 65, 41, 2, 23417310, 17, 30639542,
+//     56104015, 52, 77, 97, 47, 2709634, 28, 33123808, 3, 118, 60, 14005153,
+//     46630329, 71797411, 2660150, 98, 78, 75, 9, 97167793, 94614037, 54,
+//     17119629, 71, 86, 16, 74764342, 38, 87, 107, 23045398, 70011976, 8,
+//     31436226, 115, 48485047, 61, 64840491, 26, 54110919, 32906577, 68, 49,
+//     6233623, 116, 15, 21395780, 51, 117, 56052101, 39, 41905526, 34739439, 29,
+//     27245783, 56964973, 48620310, 84043630, 49929609, 92004458, 23, 44, 81, 84,
+//     95994806, 38611760, 51072270, 4, 99, 68620917, 112, 113, 7, 9831593, 20, 59,
+//     37, 10419844, 92, 19, 47808119, 64, 2047825, 95, 99237762, 81465034, 91, 10,
+//     89, 55848665, 46, 74632649, 62657940, 11, 30, 55, 19810171, 111, 57,
+//     46549715, 77151877, 92123826, 32, 45, 53, 74, 73, 44303970, 5675925, 85, 90,
+//     58, 42, 35, 64208867, 82, 47490048, 50403304, 25, 102, 24, 73237256, 88,
+//     48008992, 21, 14, 83, 72420374, 54797274, 18711866, 73425639, 96358108, 110,
+//     36, 50, 13, 100, 18, 59193462, 24854506, 89497532, 29214525, 96, 56153653,
+//     12, 103, 62, 104, 106, 105, 85493363, 48445723, 88717361, 94, 81643442, 5,
+//     27, 77135167, 79, 53765131, 11955749, 76, 84806640, 13187315, 19575461, 22,
+//     34, 56, 80, 108, 70, 97203553, 31, 75812992, 55886619, 6, 56795966,
+//     14494686, 66, 101, 68819671, 38609471, 48, 4009417, 35116559, 33, 72, 69,
+//     40, 8574151, 67, 2488261, 91671311, 63,
+//   ],
+//   k = 63251535
+// var nums = [
+//     96, 44, 99, 25, 61, 84, 88, 18, 19, 33, 60, 86, 52, 19, 32, 47, 35, 50, 94,
+//     17, 29, 98, 22, 21, 72, 100, 40, 84,
+//   ],
+
+//   k = 35
+var nums = [1000000000]
+k = 1000000000
+var aa = minimalKSum(nums, k)
+console.log(aa)
+// 794
+[1000000000]
+1000000000

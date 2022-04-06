@@ -1,5 +1,9 @@
 # 学习笔记
 
+## 2022.04.04
+
+给开源组件库 varletjs 提交一份[PR](https://github.com/varletjs/varlet/pull/372)
+
 ## 2022.03.30
 
 react18 正式发布，我还在学 react17.快学不动了

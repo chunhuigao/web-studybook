@@ -39,3 +39,21 @@ var minSubArrayLen = function (target, nums) {
     return max >= target;
   }
 };
+
+var minSubArrayLen = function (target, nums) {
+  const len = nums.length;
+
+  let total = 0;
+  let idx = 0;
+  let result = Infinity;
+  for (let i = 0; i < len; i++) {
+    total += nums[i];
+    while (total >= target) {
+      result = Math.min(result, i - idx + 1);
+      total -= nums[idx];
+      idx++;
+    }
+  }
+
+  return result === Infinity ? 0 : result;
+};

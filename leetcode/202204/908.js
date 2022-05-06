@@ -1,10 +1,14 @@
-var smallestRangeI = function (A, K) {
-  let l = A.length;
-  let max = A[0];
-  let min = A[0];
-  for (let i = 1; i < l; i++) {
-    max = Math.max(max, A[i]);
-    min = Math.min(min, A[i]);
+function mack(list, n) {
+  let array = [];
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] < n) {
+      array.push(i);
+    }
   }
-  return Math.max(0, max - min - 2 * K);
-};
+  console.log('array', array);
+}
+
+var list = [1, 4, 5, 0, 7, 8, 2],
+  n = 3;
+
+const aa = mack(list, n);

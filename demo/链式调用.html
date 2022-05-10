@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function PlayBoy(name) {
+      this.val = [];
+      this.idx = 0;
+      this.sayHi = () => {
+        console.log(`大家好，我是${name}`);
+        return this;
+      };
+      this.sleep = (time) => {
+        setTimeout(() => {
+          console.log(this.val[this.idx++]);
+        }, time);
+        return this;
+      };
+      this.play = (val) => {
+        this.val.push(val);
+        return this;
+      };
+      return this;
+    }
+    const boy = new PlayBoy('Tom');
+
+    boy.sayHi().sleep(1000).play('王者').sleep(2000).play('跳一跳');
+  </script>
+</html>

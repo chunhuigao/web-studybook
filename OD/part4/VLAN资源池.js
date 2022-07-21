@@ -53,8 +53,6 @@ function start(VLAN, remove) {
     }
   });
   console.log('result', result.join(','));
-
-  //console.log('vlans', vlans);
 }
 
 const testList = [

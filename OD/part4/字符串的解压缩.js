@@ -24,6 +24,10 @@ function start(s) {
           tag = false;
           break;
         }
+        if (num === 0 && s[i] === s[i + 1] && s[i] === s[i + 2]) {
+          tag = false;
+          break;
+        }
         const l = Math.max(1, num);
         result += s[i].repeat(l);
         num = 0;
@@ -46,7 +50,20 @@ function start(s) {
   }
 }
 
-const testList = ['4dff', '2dff', '4dddd', '4d@A', '4f5', '11a', '3b4f'];
+const testList = [
+  '4dff',
+  '2dff',
+  '4dddd',
+  '4d@A',
+  '4f5',
+  '11a',
+  '3b4f',
+  '3z',
+  '3a',
+  '3a3b',
+  '3a10bss',
+  '3ahhh3b',
+];
 
 testList.forEach((v) => {
   start(v);

@@ -1,6 +1,6 @@
 function start(str, a, b) {
   const words = str.trim().split(' ');
-  const start = Number(a);
+  const start = Math.max(Number(a), 0);
   const end = Number(b);
 
   let i = 0;
@@ -18,13 +18,15 @@ function start(str, a, b) {
     }
     result = list.join(' ');
   }
-  console.log('result', result);
+  console.log(result);
 }
 
 const testList = [
   ['I am a developer.', '0', '3'],
   ['I am a developer.', '1', '2'],
-  [' hello world!', '0', '3'],
+  ['hello world!', '0', '3'],
+  ['   hello world!', '0', '1'],
+  ['   hello world!', '-1', '1'],
 ];
 testList.forEach((v) => {
   const [s1, s2, s3] = v;

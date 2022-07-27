@@ -62,7 +62,7 @@ const testList = [
   '3a',
   '3a3b',
   '3a10bss',
-  '3ahhh3b',
+  '3ahh3bzza',
 ];
 
 testList.forEach((v) => {

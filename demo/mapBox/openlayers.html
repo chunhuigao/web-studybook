@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Reusable Source</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
+    <style>
+      .map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <button class="switcher" value="0">January</button>
+    <button class="switcher" value="1">January (with bathymetry)</button>
+    <button class="switcher" value="2">July</button>
+    <button class="switcher" value="3">July (With bathymetry)</button>
+
+    <script>
+      // 有mapbox瓦片地图url组成的数组
+      var urls = [
+        'https://a.tile.thunderforest.com/cycle/4/9/7.png?apikey=0e6fc415256d4fbb9b5166a718591d71',
+        'https://a.tile.thunderforest.com/cycle/4/9/4.png?apikey=0e6fc415256d4fbb9b5166a718591d71',
+        'https://a.tile.thunderforest.com/cycle/4/7/4.png?apikey=0e6fc415256d4fbb9b5166a718591d71',
+      ];
+
+      // 瓦片地图源
+      var source = new ol.source.XYZ();
+
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: source,
+          }),
+        ],
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 2,
+        }),
+      });
+
+      function updateUrl(index) {
+        source.setUrls(urls); // 改变瓦片地图源的url
+      }
+
+      var buttons = document.getElementsByClassName('switcher');
+      for (var i = 0, len = buttons.length; i < len; i++) {
+        var button = buttons[i];
+        // 让瓦片地图的url随用户点击按钮而变化
+        button.addEventListener(
+          'click',
+          updateUrl.bind(null, Number(button.value))
+        );
+      }
+
+      updateUrl(0); // 先预设置瓦片地图
+    </script>
+  </body>
+</html>

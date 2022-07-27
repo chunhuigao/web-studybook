@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css"
+      type="text/css"
+    />
+    <style>
+      .map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
+    <title>OpenLayers example</title>
+  </head>
+  <body>
+    <h2>My Map</h2>
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+      let index = 0;
+
+      function getUrl(r) {
+        const [z, x, y] = r;
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(
+              'https://a.tile.thunderforest.com/cycle/' +
+                z +
+                '/' +
+                x +
+                '/' +
+                y +
+                '.png?apikey=0e6fc415256d4fbb9b5166a718591d71'
+            );
+          }, 1000);
+        });
+      }
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          //   new ol.layer.Tile({
+          //     source: new ol.source.OSM(),
+          //   }),
+          new ol.layer.Tile({
+            source: new ol.source.XYZ({
+              tileUrlFunction: function (r) {
+                // const result = await getUrl(r);
+                const [z, x, y] = r;
+                console.log('x, y, z1', r);
+                console.log(index++);
+                // console.log('x, y, z2', y);
+                // console.log('x, y, z3', z);
+                return (
+                  'https://a.tile.thunderforest.com/cycle/' +
+                  z +
+                  '/' +
+                  x +
+                  '/' +
+                  y +
+                  '.png?apikey=0e6fc415256d4fbb9b5166a718591d71'
+                );
+                // return result;
+              },
+            }),
+            // source: new ol.source.XYZ({
+            //   url:
+            //     'https://{a-c}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png' +
+            //     '?apikey=0e6fc415256d4fbb9b5166a718591d71',
+            // }),
+          }),
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([37.41, 8.82]),
+          zoom: 4,
+        }),
+      });
+      map.on('moveend', function (e) {
+        var zoom = map.getView().getZoom(); //获取当前地图的缩放级别
+        console.log('zoom', zoom);
+      });
+
+      function tileUrlFunction(coordinate) {
+        console.log('coordinate', coordinate);
+        return (
+          'http://mapserver.com/' +
+          coordinate[0] +
+          '/' +
+          coordinate[1] +
+          '/' +
+          (-coordinate[2] - 1) +
+          '.png'
+        );
+      }
+    </script>
+  </body>
+</html>

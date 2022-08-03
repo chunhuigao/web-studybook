@@ -8,8 +8,10 @@
       type="text/css"
     />
     <style>
-      .map {
-        height: 600px;
+      .map,
+      html,
+      body {
+        height: 100%;
         width: 100%;
       }
     </style>
@@ -17,54 +19,60 @@
     <title>OpenLayers example</title>
   </head>
   <body>
-    <h2>My Map</h2>
     <div id="map" class="map"></div>
     <script type="text/javascript">
       let index = 0;
-
-      function getUrl(r) {
-        const [z, x, y] = r;
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(
-              'https://a.tile.thunderforest.com/cycle/' +
-                z +
-                '/' +
-                x +
-                '/' +
-                y +
-                '.png?apikey=0e6fc415256d4fbb9b5166a718591d71'
-            );
-          }, 1000);
-        });
-      }
+      var osmSource = new ol.source.OSM();
       var map = new ol.Map({
         target: 'map',
         layers: [
-          //   new ol.layer.Tile({
-          //     source: new ol.source.OSM(),
-          //   }),
           new ol.layer.Tile({
-            source: new ol.source.XYZ({
-              tileUrlFunction: function (r) {
-                // const result = await getUrl(r);
-                const [z, x, y] = r;
-                console.log('x, y, z1', r);
-                console.log(index++);
-                // console.log('x, y, z2', y);
-                // console.log('x, y, z3', z);
-                return (
-                  'https://a.tile.thunderforest.com/cycle/' +
-                  z +
-                  '/' +
-                  x +
-                  '/' +
-                  y +
-                  '.png?apikey=0e6fc415256d4fbb9b5166a718591d71'
-                );
-                // return result;
-              },
+            source: osmSource,
+          }),
+          new ol.layer.Tile({
+            //瓦片网格数据源
+            source: new ol.source.TileDebug({
+              //投影
+              projection: 'EPSG:3857',
+              //获取瓦片网格信息
+              tileGrid: osmSource.getTileGrid(),
             }),
+          }),
+          new ol.layer.Tile({
+            // source: new ol.source.XYZ({
+            //   tileLoadFunction: (tile, src) => {
+            //     const { tileCoord } = tile;
+            //     const [z, x, y] = tileCoord;
+            //     // map.getView().getTileRangeForExtentAndZ()
+            //     tile.getImage().src =
+            //       'https://a.tile.thunderforest.com/cycle/' +
+            //       z +
+            //       '/' +
+            //       x +
+            //       '/' +
+            //       y +
+            //       '.png?apikey=0e6fc415256d4fbb9b5166a718591d71';
+            //     console.log('tile', tile);
+            //   },
+            // tileUrlFunction: function (r) {
+            //   // const result = await getUrl(r);
+            //   const [z, x, y] = r;
+            //   console.log('x, y, z1', r);
+            //   console.log(index++);
+            //   // console.log('x, y, z2', y);
+            //   // console.log('x, y, z3', z);
+            //   return (
+            //     'https://a.tile.thunderforest.com/cycle/' +
+            //     z +
+            //     '/' +
+            //     x +
+            //     '/' +
+            //     y +
+            //     '.png?apikey=0e6fc415256d4fbb9b5166a718591d71'
+            //   );
+            //   // return result;
+            // },
+            //}),
             // source: new ol.source.XYZ({
             //   url:
             //     'https://{a-c}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png' +
@@ -78,8 +86,22 @@
         }),
       });
       map.on('moveend', function (e) {
-        var zoom = map.getView().getZoom(); //获取当前地图的缩放级别
-        console.log('zoom', zoom);
+        setTimeout(() => {
+          var zoom = map.getView().getZoom(); //获取当前地图的缩放级别
+          var ext = map.getView().calculateExtent();
+
+          var rangeMax = osmSource
+            .getTileGrid()
+            .getTileRangeForExtentAndZ(ext, Math.ceil(zoom));
+          var range = osmSource
+            .getTileGrid()
+            .getTileRangeForExtentAndZ(ext, Math.round(zoom));
+          var rangeMin = osmSource
+            .getTileGrid()
+            .getTileRangeForExtentAndZ(ext, Math.floor(zoom));
+
+          console.log('111', zoom, rangeMin, rangeMax);
+        }, 20);
       });
 
       function tileUrlFunction(coordinate) {

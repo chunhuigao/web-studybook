@@ -88,6 +88,7 @@
       map.on('moveend', function (e) {
         setTimeout(() => {
           var zoom = map.getView().getZoom(); //获取当前地图的缩放级别
+          var center = map.getView().getCenter();
           var ext = map.getView().calculateExtent();
 
           var rangeMax = osmSource
@@ -95,12 +96,15 @@
             .getTileRangeForExtentAndZ(ext, Math.ceil(zoom));
           var range = osmSource
             .getTileGrid()
-            .getTileRangeForExtentAndZ(ext, Math.round(zoom));
+            .getTileRangeForExtentAndZ(ext, parseInt(zoom));
           var rangeMin = osmSource
             .getTileGrid()
             .getTileRangeForExtentAndZ(ext, Math.floor(zoom));
 
+          console.log('center', center);
+          console.log('center', ext);
           console.log('111', zoom, rangeMin, rangeMax);
+          console.log('range', range);
         }, 20);
       });
 
